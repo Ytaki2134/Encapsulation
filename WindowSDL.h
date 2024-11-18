@@ -14,7 +14,8 @@ public:
 	int Clear() override;
 	int Draw() override;
 private:
-	SDL_Surface* winSurface = NULL;
-	SDL_Window* window = NULL;
+	SDL_Surface* m_winSurface = NULL;
+	SDL_Window* m_window = NULL;
+	SDL_Renderer* m_renderer = NULL;
 };
 
