@@ -35,6 +35,9 @@ int WindowRayLib::Clear()
 
 int WindowRayLib::Draw()
 {
-	
+	BeginDrawing();
+	ClearBackground(WHITE);
+	//draw here
+	EndDrawing();
 	return 0;
 }
