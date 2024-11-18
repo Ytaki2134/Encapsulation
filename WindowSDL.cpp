@@ -22,10 +22,10 @@ int WindowSDL::Init()
 int WindowSDL::Open()
 {
 	// Create our window
-	window = SDL_CreateWindow(m_winName.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_sizeX, m_sizeY, SDL_WINDOW_SHOWN);
+	m_window = SDL_CreateWindow(m_winName.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_sizeX, m_sizeY, SDL_WINDOW_SHOWN);
 
 	// Make sure creating the window succeeded
-	if (!window) {
+	if (!m_window) {
 		std::cout << "Error creating window: " << SDL_GetError() << std::endl;
 		system("pause");
 		// End the program
@@ -33,11 +33,21 @@ int WindowSDL::Open()
 	}
 
 	// Get the surface from the window
-	winSurface = SDL_GetWindowSurface(window);
+	m_winSurface = SDL_GetWindowSurface(m_window);
 
 	// Make sure getting the surface succeeded
-	if (!winSurface) {
+	if (!m_winSurface) {
 		std::cout << "Error getting surface: " << SDL_GetError() << std::endl;
+		system("pause");
+		// End the program
+		return 1;
+	}
+
+	m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED);
+
+	if (!m_renderer)
+	{
+		std::cout << "Error getting renderer: " << SDL_GetError() << std::endl;
 		system("pause");
 		// End the program
 		return 1;
@@ -48,7 +58,7 @@ int WindowSDL::Open()
 
 int WindowSDL::IsOpen()
 {
-	if (window != NULL)
+	if (m_window != NULL)
 		return 0;
 
 	else
@@ -57,7 +67,7 @@ int WindowSDL::IsOpen()
 
 int WindowSDL::Clear()
 {
-	if (SDL_RenderClear())
+	if (SDL_RenderClear(m_renderer))
 		return 0;
 	else
 		return 1;
@@ -66,12 +76,12 @@ int WindowSDL::Clear()
 int WindowSDL::Draw()
 {
 	// Fill the window with a white rectangle
-	SDL_FillRect(winSurface, NULL, SDL_MapRGB(winSurface->format, 255, 255, 255));
+	SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
 
 	//DRAW HERE
 
 	// Update the window display
-	SDL_UpdateWindowSurface(window);
+	SDL_UpdateWindowSurface(m_window);
 
 	return 0;
 }
