@@ -1,8 +1,8 @@
 #include "WindowRayLib.h"
-
+#include"raylib.h"
 WindowRayLib::WindowRayLib()
 {
-
+	InitWindow(100, 100, "PROJECT: BLOCKS GAME");
 }
 
 void WindowRayLib::Init()
