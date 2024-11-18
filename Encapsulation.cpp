@@ -8,5 +8,6 @@
 int main(int argc, char** args)
 {
     Window* win = new Window("Encapsulation", 800, 800, SDL);
+    win->Init();
     win->Open();
 }

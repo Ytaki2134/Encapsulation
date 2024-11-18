@@ -1,15 +1,16 @@
 #pragma once
 #include <iostream>
 #include <SDL.h>
+#include "Window.h"
 
-class Window;
+//class Window;
 
 class WindowSDL : public Window
 {
 public:
-	WindowSDL();
+	WindowSDL(std::string winName, int SizeX, int SizeY);
 	int Init() override;
-	int Open(std::string winName, int SizeX, int SizeY) override;
+	int Open() override;
 	int IsOpen() override;
 	int Clear() override;
 	int Draw() override;

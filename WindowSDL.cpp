@@ -1,9 +1,10 @@
 #include "WindowSDL.h"
-#include "Window.h"
 
-WindowSDL::WindowSDL()
+WindowSDL::WindowSDL(std::string winName, int SizeX, int SizeY)
 {
-
+	m_winName = winName;
+	m_sizeX = SizeX;
+	m_sizeY = SizeY;
 }
 
 int WindowSDL::Init()
@@ -15,12 +16,13 @@ int WindowSDL::Init()
 		// End the program
 		return 1;
 	}
+	return 0;
 }
 
-int WindowSDL::Open(std::string winName, int SizeX, int SizeY)
+int WindowSDL::Open()
 {
 	// Create our window
-	window = SDL_CreateWindow("Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280, 720, SDL_WINDOW_SHOWN);
+	window = SDL_CreateWindow(m_winName.c_str(), m_sizeX, m_sizeY, 1280, 720, SDL_WINDOW_SHOWN);
 
 	// Make sure creating the window succeeded
 	if (!window) {
@@ -29,19 +31,20 @@ int WindowSDL::Open(std::string winName, int SizeX, int SizeY)
 		// End the program
 		return 1;
 	}
+	return 0;
 }
 
 int WindowSDL::IsOpen()
 {
-
+	return 0;
 }
 
 int WindowSDL::Clear()
 {
-
+	return 0;
 }
 
 int WindowSDL::Draw()
 {
-
+	return 0;
 }
