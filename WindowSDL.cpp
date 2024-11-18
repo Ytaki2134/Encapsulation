@@ -48,18 +48,27 @@ int WindowSDL::Open()
 
 int WindowSDL::IsOpen()
 {
-	return 0;
+	if (window != NULL)
+		return 0;
+
+	else
+		return 1;
 }
 
 int WindowSDL::Clear()
 {
-	return 0;
+	if (SDL_RenderClear())
+		return 0;
+	else
+		return 1;
 }
 
 int WindowSDL::Draw()
 {
 	// Fill the window with a white rectangle
 	SDL_FillRect(winSurface, NULL, SDL_MapRGB(winSurface->format, 255, 255, 255));
+
+	//DRAW HERE
 
 	// Update the window display
 	SDL_UpdateWindowSurface(window);

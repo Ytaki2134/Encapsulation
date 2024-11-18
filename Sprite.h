@@ -1,10 +1,14 @@
 #pragma once
+#include <string>
+
 class Sprite
 {
 public:
-	Sprite();
-	virtual void LoadSprite();
-	virtual void GetSprite();
+	virtual void LoadSprite() = 0;
+	virtual void GetSprite() = 0;
+
+	static void MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY);
+	static void MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY);
 
 protected:
 	float x, y;
