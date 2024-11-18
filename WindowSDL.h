@@ -2,17 +2,17 @@
 #include <iostream>
 #include <SDL.h>
 
-class Window;
+#include "Window.h"
 
 class WindowSDL : public Window
 {
 public:
 	WindowSDL();
-	int Init() override;
-	int Open(std::string winName, int SizeX, int SizeY) override;
-	int IsOpen() override;
-	int Clear() override;
-	int Draw() override;
+	int Init() ;
+	int Open(std::string winName, int SizeX, int SizeY) ;
+	int IsOpen() ;
+	int Clear() ;
+	int Draw() ;
 private:
 	SDL_Surface* winSurface = NULL;
 	SDL_Window* window = NULL;

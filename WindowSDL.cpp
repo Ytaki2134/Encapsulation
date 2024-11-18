@@ -33,15 +33,17 @@ int WindowSDL::Open(std::string winName, int SizeX, int SizeY)
 
 int WindowSDL::IsOpen()
 {
-
+	return 0;
 }
 
 int WindowSDL::Clear()
 {
+	return 0;
 
 }
 
 int WindowSDL::Draw()
 {
+	return 0;
 
 }

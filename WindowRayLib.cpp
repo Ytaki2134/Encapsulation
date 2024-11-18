@@ -1,5 +1,5 @@
 #include "WindowRayLib.h"
-#include"raylib.h"
+
 WindowRayLib::WindowRayLib()
 {
 	
@@ -7,18 +7,19 @@ WindowRayLib::WindowRayLib()
 
 int WindowRayLib::Init()
 {
-
+	return 0;
 }
 
-int WindowRayLib::Open()
+int WindowRayLib::Open(std::string winName, int SizeX, int SizeY)
 {
-	InitWindow(450, 450, "basic window");
+	InitWindow(SizeX, SizeY,winName.c_str());
 	SetTargetFPS(60);
+	return 0;
 }
 
 int WindowRayLib::IsOpen()
 {
-
+	return 0;
 }
 
 int WindowRayLib::Clear()
@@ -26,10 +27,12 @@ int WindowRayLib::Clear()
 	BeginDrawing();
 	ClearBackground(BLACK);
 	EndDrawing();
+	return 0;
 }
 
 int WindowRayLib::Draw()
 {
 	BeginDrawing();
 	EndDrawing();
+	return 0;
 }

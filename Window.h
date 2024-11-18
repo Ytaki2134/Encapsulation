@@ -7,12 +7,13 @@ enum Library
 	RAYLIB
 };
 
-//class WindowSDL;
-//class WindowRayLib;
+class WindowSDL;
+class WindowRayLib;
 
 class Window
 {
 public:
+	Window(),
 	Window(std::string winName, int SizeX, int SizeY, Library lib);
 	virtual int Init();
 	virtual int Open(std::string winName, int SizeX, int SizeY);

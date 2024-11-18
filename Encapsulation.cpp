@@ -8,6 +8,6 @@
 
 int main(int argc, char** args)
 {
-    Window* win = new Window("Encapsulation", 800, 800, SDL);
-    win->Open();
+    Window* win = new Window("Encapsulation", 800, 800, RAYLIB);
+    win->Open("haaa",450,450);
 }
