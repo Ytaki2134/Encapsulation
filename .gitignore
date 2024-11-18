@@ -18,6 +18,8 @@ mono_crash.*
 
 # Build results
 [Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
@@ -85,8 +87,6 @@ StyleCopReport.xml
 *.tmp
 *.tmp_proj
 *_wpftmp.csproj
-*.tlog
-*.idb
 *.log
 *.vspscc
 *.vssscc
@@ -94,6 +94,9 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.recipe
+*.tlog
+*.idb
 
 # Chutzpah Test files
 _Chutzpah*
