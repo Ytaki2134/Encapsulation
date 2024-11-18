@@ -5,12 +5,12 @@ Sprite::Sprite()
 
 }
 
-void Sprite::LoadSprite()
+void Sprite::MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY)
 {
 
 }
 
-void Sprite::GetSprite()
+void Sprite::MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY)
 {
 
 }

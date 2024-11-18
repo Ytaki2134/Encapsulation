@@ -25,12 +25,14 @@ int main(int argc, char** args)
 			app.EventLoop();
 		}
 		break;
+
 	case RAYLIB:
 		while (!WindowShouldClose())
 		{
 			win->Draw();
 		}
 		break;
+
 	default:
 		//todo
 		break;
