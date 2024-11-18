@@ -14,8 +14,11 @@ int WindowRayLib::Init()
 
 int WindowRayLib::Open()
 {
-	//InitWindow(SizeX, SizeY,winName.c_str());
+	InitWindow(m_sizeX, m_sizeY,m_winName.c_str());
 	SetTargetFPS(60);
+	BeginDrawing();
+	ClearBackground(WHITE);
+	EndDrawing();
 	return 0;
 }
 
@@ -26,15 +29,12 @@ int WindowRayLib::IsOpen()
 
 int WindowRayLib::Clear()
 {
-	BeginDrawing();
-	ClearBackground(BLACK);
-	EndDrawing();
+
 	return 0;
 }
 
 int WindowRayLib::Draw()
 {
-	BeginDrawing();
-	EndDrawing();
+	
 	return 0;
 }

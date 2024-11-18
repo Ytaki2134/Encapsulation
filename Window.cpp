@@ -37,7 +37,7 @@ Window* Window::MakeWindow(std::string winName, int SizeX, int SizeY, Library li
 		break;
 
 	case RAYLIB:
-		MakeRayLibWindow(winName, SizeX, SizeY);
+		return MakeRayLibWindow(winName, SizeX, SizeY);
 		break;
 
 	default:
