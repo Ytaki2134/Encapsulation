@@ -2,32 +2,6 @@
 #include "WindowSDL.h"
 #include "WindowRayLib.h"
 
-//Window::Window()
-//{
-//}
-//
-//Window::Window(std::string winName, int SizeX, int SizeY, Library lib)
-//{
-//	m_winName = "";
-//	m_sizeX = 0;
-//	m_sizeY = 0;
-//
-//	switch (lib)
-//	{
-//	case SDL:
-//		MakeSDLWindow(winName, SizeX, SizeY);
-//		break;
-//
-//	case RAYLIB:
-//		//todo
-//		break;
-//
-//	default:
-//		//todo
-//		break;
-//	}
-//}
-
 Window* Window::MakeWindow(std::string winName, int SizeX, int SizeY, Library lib)
 {
 	switch (lib)
