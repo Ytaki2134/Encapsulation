@@ -13,18 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers sources\Window">
+      <UniqueIdentifier>{dea17eba-ebb8-4c41-852d-f01eb8a82d1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Sprite">
+      <UniqueIdentifier>{3ac430fc-a58f-4e50-93f8-2a08c2889557}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Encapsulation.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Window.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Window</Filter>
     </ClCompile>
     <ClCompile Include="WindowRayLib.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Window</Filter>
     </ClCompile>
     <ClCompile Include="WindowSDL.cpp">
+      <Filter>Fichiers sources\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Fichiers sources\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteSDL.cpp">
+      <Filter>Fichiers sources\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteRayLib.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +47,19 @@
     <ClInclude Include="Window.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="WindowSDL.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
     <ClInclude Include="WindowRayLib.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="WindowSDL.h">
+    <ClInclude Include="Sprite.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteSDL.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteRayLib.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
