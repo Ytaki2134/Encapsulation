@@ -10,7 +10,7 @@ int main(int argc, char** args)
 {
     bool IsRunning = true;
 
-    Window* win = Window::MakeWindow("Encapsulation", 800, 800, RAYLIB);
+    Window* win = Window::MakeWindow("Encapsulation", 800, 800, SDL);
     win->Init();
     win->Open();
 
