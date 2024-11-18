@@ -24,7 +24,10 @@ int WindowRayLib::Open()
 
 int WindowRayLib::IsOpen()
 {
-	return 0;
+	if (IsWindowReady)
+		return 0;
+	else
+		return 1;
 }
 
 int WindowRayLib::Clear()
