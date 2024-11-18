@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="App.cpp" />
     <ClCompile Include="Encapsulation.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteRayLib.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="WindowSDL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="App.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteRayLib.h" />
     <ClInclude Include="SpriteSDL.h" />
