@@ -8,6 +8,5 @@ public:
 	virtual void IsOpen();
 	virtual void Clear();
 	virtual void Draw();
-
 };
 
