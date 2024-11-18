@@ -1,31 +1,55 @@
 #include "Window.h"
 
-Window::Window()
+Window::Window(std::string winName, int SizeX, int SizeY, Library lib)
+{
+	switch (lib)
+	{
+	case SDL:
+		MakeSDLWindow(winName, SizeX, SizeY);
+		break;
+
+	case RAYLIB:
+		//todo
+		break;
+
+	default:
+		//todo
+		break;
+	}
+}
+
+int Window::Init()
 {
 
 }
 
-void Window::Init()
+int Window::Open(std::string winName, int SizeX, int SizeY)
+{
+	return 0;
+}
+
+
+int Window::IsOpen()
 {
 
 }
 
-void Window::Open()
+int Window::Clear()
 {
 
 }
 
-void Window::IsOpen()
+int Window::Draw()
 {
 
 }
 
-void Window::Clear()
+Window Window::MakeSDLWindow(std::string winName, int SizeX, int SizeY)
 {
-
+	return WindowSDL();
 }
 
-void Window::Draw()
+Window Window::MakeRayLibWindow(std::string winName, int SizeX, int SizeY)
 {
-
+	return WindowRayLib();
 }

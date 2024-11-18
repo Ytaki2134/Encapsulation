@@ -1,13 +1,20 @@
 #pragma once
-#include "Window.h"
+#include <iostream>
+#include <SDL.h>
+
+class Window;
+
 class WindowSDL : public Window
 {
 public:
 	WindowSDL();
-	void Init() override;
-	void Open() override;
-	void IsOpen() override;
-	void Clear() override;
-	void Draw() override;
+	int Init() override;
+	int Open(std::string winName, int SizeX, int SizeY) override;
+	int IsOpen() override;
+	int Clear() override;
+	int Draw() override;
+private:
+	SDL_Surface* winSurface = NULL;
+	SDL_Window* window = NULL;
 };
 

@@ -1,5 +1,7 @@
 #pragma once
-class SpriteRayLib
+#include "Sprite.h"
+
+class SpriteRayLib : public Sprite
 {
 	SpriteRayLib();
 	void LoadSprite() override;

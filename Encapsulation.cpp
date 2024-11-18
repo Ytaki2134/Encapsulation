@@ -2,18 +2,12 @@
 //
 
 #include <iostream>
-#include"WindowRayLib.h"
-//#include"WindowSDL.h"
-#include"raylib.h"
 
-int main()
+#include "Window.h"
+#include "Sprite.h"
+
+int main(int argc, char** args)
 {
-    WindowRayLib window;
-    window.Open();
-    while (!WindowShouldClose())    // Detect window close button or ESC key
-    {
-        window.Clear();
-    }
-
-	return 0;
+    Window* win = new Window("Encapsulation", 800, 800, SDL);
+    win->Open();
 }

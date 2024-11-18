@@ -5,30 +5,30 @@ WindowRayLib::WindowRayLib()
 	
 }
 
-void WindowRayLib::Init()
+int WindowRayLib::Init()
 {
 
 }
 
-void WindowRayLib::Open()
+int WindowRayLib::Open()
 {
 	InitWindow(450, 450, "basic window");
 	SetTargetFPS(60);
 }
 
-void WindowRayLib::IsOpen()
+int WindowRayLib::IsOpen()
 {
 
 }
 
-void WindowRayLib::Clear()
+int WindowRayLib::Clear()
 {
 	BeginDrawing();
 	ClearBackground(BLACK);
 	EndDrawing();
 }
 
-void WindowRayLib::Draw()
+int WindowRayLib::Draw()
 {
 	BeginDrawing();
 	EndDrawing();
