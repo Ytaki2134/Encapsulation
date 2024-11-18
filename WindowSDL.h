@@ -7,12 +7,12 @@
 class WindowSDL : public Window
 {
 public:
-	WindowSDL();
-	int Init() ;
-	int Open(std::string winName, int SizeX, int SizeY) ;
-	int IsOpen() ;
-	int Clear() ;
-	int Draw() ;
+	WindowSDL(std::string winName, int SizeX, int SizeY);
+	int Init() override;
+	int Open() override;
+	int IsOpen() override;
+	int Clear() override;
+	int Draw() override;
 private:
 	SDL_Surface* winSurface = NULL;
 	SDL_Window* window = NULL;
