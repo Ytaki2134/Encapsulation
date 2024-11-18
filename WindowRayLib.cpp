@@ -12,9 +12,9 @@ int WindowRayLib::Init()
 	return 0;
 }
 
-int WindowRayLib::Open(std::string winName, int SizeX, int SizeY)
+int WindowRayLib::Open()
 {
-	InitWindow(SizeX, SizeY,winName.c_str());
+	//InitWindow(SizeX, SizeY,winName.c_str());
 	SetTargetFPS(60);
 	return 0;
 }
