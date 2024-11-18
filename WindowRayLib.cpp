@@ -32,7 +32,7 @@ int WindowRayLib::IsOpen()
 
 int WindowRayLib::Clear()
 {
-
+	ClearBackground(WHITE);
 	return 0;
 }
 
