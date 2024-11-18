@@ -1,6 +1,7 @@
 #pragma once
 class Window
 {
+public:
 	Window();
 	virtual void Init();
 	virtual void Open();
