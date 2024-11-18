@@ -2,10 +2,16 @@
 //
 
 #include <iostream>
+//#include"WindowRayLib.h"
+//#include"WindowSDL.h"
+#include"SDL.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	//WindowSDL window;
+	//window.Init();
+	SDL_CreateWindow("my window", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
+	return 0;
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
