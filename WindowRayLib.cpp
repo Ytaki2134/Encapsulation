@@ -7,7 +7,7 @@ WindowRayLib::WindowRayLib()
 
 void WindowRayLib::Init()
 {
-	//InitWindow(100, 100, "PROJECT: BLOCKS GAME");
+	
 }
 
 void WindowRayLib::Open()

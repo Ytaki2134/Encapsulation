@@ -4,13 +4,11 @@
 #include <iostream>
 //#include"WindowRayLib.h"
 //#include"WindowSDL.h"
-#include"SDL.h"
+#include"raylib.h"
 
 int main()
 {
-	//WindowSDL window;
-	//window.Init();
-	SDL_CreateWindow("my window", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
+	InitWindow(100, 100, "PROJECT: BLOCKS GAME");
 	return 0;
 }
 
