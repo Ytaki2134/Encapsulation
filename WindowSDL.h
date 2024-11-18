@@ -1,9 +1,8 @@
 #pragma once
 #include <iostream>
 #include <SDL.h>
-#include "Window.h"
 
-//class Window;
+#include "Window.h"
 
 class WindowSDL : public Window
 {

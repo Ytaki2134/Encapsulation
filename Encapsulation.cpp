@@ -7,7 +7,15 @@
 
 int main(int argc, char** args)
 {
-    Window* win = new Window("Encapsulation", 800, 800, SDL);
+    bool IsRunning = true;
+
+    Window* win = Window("Encapsulation", 800, 800, SDL);
     win->Init();
     win->Open();
+
+    while (IsRunning)
+    {
+        win->Clear();
+        win->Draw();
+    }
 }

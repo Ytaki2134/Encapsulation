@@ -28,38 +28,14 @@ Window::Window(std::string winName, int SizeX, int SizeY, Library lib)
 	}
 }
 
-int Window::Init()
+Window* Window::MakeSDLWindow(std::string winName, int SizeX, int SizeY)
 {
-	return 0;
+	Window* win = new WindowSDL(winName, SizeX, SizeY);
+	return win;
 }
 
-int Window::Open()
+Window* Window::MakeRayLibWindow(std::string winName, int SizeX, int SizeY)
 {
-	return 0;
-}
-
-int Window::IsOpen()
-{
-	return 0;
-}
-
-int Window::Clear()
-{
-	return 0;
-}
-
-int Window::Draw()
-{
-	return 0;
-}
-
-Window Window::MakeSDLWindow(std::string winName, int SizeX, int SizeY)
-{
-	return WindowSDL(winName, SizeX, SizeY);
-}
-
-Window Window::MakeRayLibWindow(std::string winName, int SizeX, int SizeY)
-{
-	//todo
-	return WindowRayLib(winName, SizeX, SizeY);
+	Window* win = new WindowRayLib(winName, SizeX, SizeY);
+	return win;
 }

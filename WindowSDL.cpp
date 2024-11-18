@@ -31,6 +31,18 @@ int WindowSDL::Open()
 		// End the program
 		return 1;
 	}
+
+	// Get the surface from the window
+	winSurface = SDL_GetWindowSurface(window);
+
+	// Make sure getting the surface succeeded
+	if (!winSurface) {
+		std::cout << "Error getting surface: " << SDL_GetError() << std::endl;
+		system("pause");
+		// End the program
+		return 1;
+	}
+
 	return 0;
 }
 
@@ -46,5 +58,11 @@ int WindowSDL::Clear()
 
 int WindowSDL::Draw()
 {
+	// Fill the window with a white rectangle
+	SDL_FillRect(winSurface, NULL, SDL_MapRGB(winSurface->format, 255, 255, 255));
+
+	// Update the window display
+	SDL_UpdateWindowSurface(window);
+
 	return 0;
 }
