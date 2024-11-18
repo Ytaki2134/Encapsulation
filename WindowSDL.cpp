@@ -22,7 +22,7 @@ int WindowSDL::Init()
 int WindowSDL::Open()
 {
 	// Create our window
-	window = SDL_CreateWindow(m_winName.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_sizeX, m_sizeY, SDL_WINDOW_SHOWN);
+	window = SDL_CreateWindow(m_winName.c_str(), m_sizeX, m_sizeY, 1280, 720, SDL_WINDOW_SHOWN);
 
 	// Make sure creating the window succeeded
 	if (!window) {
