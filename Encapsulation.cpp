@@ -9,7 +9,7 @@ int main(int argc, char** args)
 {
     bool IsRunning = true;
 
-    Window* win = Window::MakeWindow("Encapsulation", 800, 800, SDL);
+    Window* win = Window::MakeWindow("Encapsulation", 800, 600, SDL);
     win->Init();
     win->Open();
 
