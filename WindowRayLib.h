@@ -5,10 +5,10 @@ class WindowRayLib : public Window
 {
 public:
 	WindowRayLib();
-	void Init() override;
-	void Open() override;
-	void IsOpen() override;
-	void Clear() override;
-	void Draw() override;
+	int Init() override;
+	int Open() override;
+	int IsOpen() override;
+	int Clear() override;
+	int Draw() override;
 };
 
