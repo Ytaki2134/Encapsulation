@@ -1,15 +1,19 @@
 #include "Sprite.h"
+#include "SpriteSDL.h"
+#include "SpriteRayLib.h"
 
-SDL_Surface* Sprite::MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window)
+Sprite* Sprite::MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window)
 {
-	SDL_Surface* pSprite = SDL_LoadBMP(imgPath.c_str());
-	if (pSprite)
+	SpriteSDL* tempSprite = new SpriteSDL();
+	SDL_Surface* surface = SDL_LoadBMP(imgPath.c_str());
+	if (surface)
 	{
 		SDL_Rect dest = { pos.x, pos.y, SizeX, SizeY };
-		SDL_BlitScaled(pSprite, NULL, SDL_GetWindowSurface(window), &dest);
 
-		SDL_FreeSurface(pSprite); // Libération de la ressource occupée par le sprite
-		return pSprite;
+		tempSprite->m_rect = dest;
+		tempSprite->m_surface = surface;
+		tempSprite->m_SDLwinSurface = SDL_GetWindowSurface(window);
+		return tempSprite;
 	}
 	else
 	{
@@ -20,7 +24,7 @@ SDL_Surface* Sprite::MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY, Po
 	}
 }
 
-SDL_Surface* Sprite::MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window)
+Sprite* Sprite::MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window)
 {
 	return nullptr;
 }

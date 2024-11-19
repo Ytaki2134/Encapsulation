@@ -1,4 +1,4 @@
-#include "WindowSDL.h"
+﻿#include "WindowSDL.h"
 
 WindowSDL::WindowSDL(std::string winName, int SizeX, int SizeY)
 {
@@ -7,7 +7,7 @@ WindowSDL::WindowSDL(std::string winName, int SizeX, int SizeY)
 	m_sizeY = SizeY;
 }
 
-int WindowSDL::Init()
+int WindowSDL::Init(GameModeType* gameModeType)
 {
 	// Initialize SDL. SDL_Init will return -1 if it fails.
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
@@ -16,13 +16,9 @@ int WindowSDL::Init()
 		// End the program
 		return 1;
 	}
-	return 0;
-}
 
-int WindowSDL::Open()
-{
 	// Create our window
-	m_window = SDL_CreateWindow(m_winName.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_sizeX, m_sizeY, SDL_WINDOW_SHOWN);
+	m_window = SDL_CreateWindow(m_winName.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_sizeX, m_sizeY, SDL_WINDOW_HIDDEN);
 
 	// Make sure creating the window succeeded
 	if (!m_window) {
@@ -31,6 +27,25 @@ int WindowSDL::Open()
 		// End the program
 		return 1;
 	}
+
+	m_gamemode = GameMode::MakeGameMode(*gameModeType);
+	if (m_gamemode != nullptr)
+	{
+		m_gamemode->Init(this);
+		return 0;
+	}
+	else
+	{
+		std::cout << "Error Loading Gamemode: " << SDL_GetError() << std::endl;
+		system("pause");
+		// End the program
+		return 1;
+	}
+
+}
+
+int WindowSDL::Open()
+{
 
 	// Get the surface from the window
 	m_winSurface = SDL_GetWindowSurface(m_window);
@@ -53,6 +68,7 @@ int WindowSDL::Open()
 		return 1;
 	}
 
+	SDL_ShowWindow(m_window);
 	return 0;
 }
 
@@ -79,11 +95,34 @@ int WindowSDL::Draw()
 	SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
 
 	//DRAW HERE
-	//BOUNCING BALLS SCENE
-	Sprite::MakeSpriteSDL("Src/Ressources/masterBall.bmp", 40, 40, Position(20,20), m_window);
+	for (auto &sprite : m_gamemode->GetSpriteVector())
+	{
+		sprite->LoadSprite();
+	}
 
 	// Update the window display
 	SDL_UpdateWindowSurface(m_window);
 
 	return 0;
+}
+
+int WindowSDL::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
+{
+	if (Sprite::MakeSpriteSDL("Src/Ressources/masterBall.bmp", SizeX, SizeY, pos, m_window) != nullptr)
+	{
+		m_gamemode->AddSprite(Sprite::MakeSpriteSDL("Src/Ressources/masterBall.bmp", SizeX, SizeY, pos, m_window));
+		return 0;
+	}
+	else
+	{
+		std::cout << "Error creating sprite in scene: " << SDL_GetError() << std::endl;
+		system("pause");
+		// End the program
+		return 1;
+	}
+}
+
+SDL_Window* WindowSDL::GetSDLWindow()
+{
+	return m_window;
 }

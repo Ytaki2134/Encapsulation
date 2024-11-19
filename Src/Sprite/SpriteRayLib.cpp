@@ -5,12 +5,12 @@ SpriteRayLib::SpriteRayLib()
 
 }
 
-void SpriteRayLib::LoadSprite()
+int SpriteRayLib::LoadSprite()
 {
-
+	return 0;
 }
 
-void SpriteRayLib::GetSprite()
+int SpriteRayLib::GetSprite()
 {
-
+	return 0;
 }

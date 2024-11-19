@@ -19,11 +19,23 @@
     <Filter Include="Fichiers sources\Sprite">
       <UniqueIdentifier>{3ac430fc-a58f-4e50-93f8-2a08c2889557}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Ressources">
-      <UniqueIdentifier>{ca506c78-b158-44ba-bb45-81e8559e6cd3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers sources\Core">
       <UniqueIdentifier>{a79be105-cfd3-4a79-8fd7-0307ef495b0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Core">
+      <UniqueIdentifier>{88de47a5-40c7-42b9-b9bd-e6d8c82aa717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\GameMode">
+      <UniqueIdentifier>{43f27769-e998-4439-88bd-9c26440ea6b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Window">
+      <UniqueIdentifier>{10956b76-427d-470c-a369-0751b4d7e8b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Sprite">
+      <UniqueIdentifier>{59872bef-bc6e-4035-991c-599f40e4af50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\GameMode">
+      <UniqueIdentifier>{1a2cf6eb-ab93-4a30-bf8a-ad074e42dd45}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,33 +63,30 @@
     <ClCompile Include="Src\Window\WindowSDL.cpp">
       <Filter>Fichiers sources\Window</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GameMode\BouncingBallsGM.cpp">
+      <Filter>Fichiers sources\GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GameMode\GameMode.cpp">
+      <Filter>Fichiers sources\GameMode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Core\App.h">
       <Filter>Fichiers sources\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Sprite\Sprite.h">
-      <Filter>Fichiers sources\Sprite</Filter>
+    <ClInclude Include="Src\GameMode\BouncingBallsGM.h">
+      <Filter>Fichiers d%27en-tête\GameMode</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Sprite\SpriteRayLib.h">
-      <Filter>Fichiers sources\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Sprite\SpriteSDL.h">
-      <Filter>Fichiers sources\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Window\Window.h">
-      <Filter>Fichiers sources\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Window\WindowRayLib.h">
-      <Filter>Fichiers sources\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Window\WindowSDL.h">
-      <Filter>Fichiers sources\Window</Filter>
+    <ClInclude Include="Src\GameMode\GameMode.h">
+      <Filter>Fichiers d%27en-tête\GameMode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Src\Ressources\masterBall.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
     <Image Include="Src\Ressources\masterBall.png">
-      <Filter>Fichiers sources\Ressources</Filter>
+      <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>
 </Project>
