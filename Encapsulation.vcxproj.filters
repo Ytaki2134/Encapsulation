@@ -19,54 +19,65 @@
     <Filter Include="Fichiers sources\Sprite">
       <UniqueIdentifier>{3ac430fc-a58f-4e50-93f8-2a08c2889557}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Ressources">
+      <UniqueIdentifier>{ca506c78-b158-44ba-bb45-81e8559e6cd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Core">
+      <UniqueIdentifier>{a79be105-cfd3-4a79-8fd7-0307ef495b0f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Encapsulation.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>Fichiers sources\Window</Filter>
+    <ClCompile Include="Src\Core\App.cpp">
+      <Filter>Fichiers sources\Core</Filter>
     </ClCompile>
-    <ClCompile Include="WindowRayLib.cpp">
-      <Filter>Fichiers sources\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowSDL.cpp">
-      <Filter>Fichiers sources\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
+    <ClCompile Include="Src\Sprite\Sprite.cpp">
       <Filter>Fichiers sources\Sprite</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteSDL.cpp">
+    <ClCompile Include="Src\Sprite\SpriteRayLib.cpp">
       <Filter>Fichiers sources\Sprite</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteRayLib.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="Src\Sprite\SpriteSDL.cpp">
+      <Filter>Fichiers sources\Sprite</Filter>
     </ClCompile>
-    <ClCompile Include="App.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="Src\Window\Window.cpp">
+      <Filter>Fichiers sources\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Window\WindowRayLib.cpp">
+      <Filter>Fichiers sources\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Window\WindowSDL.cpp">
+      <Filter>Fichiers sources\Window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Window.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Src\Core\App.h">
+      <Filter>Fichiers sources\Core</Filter>
     </ClInclude>
-    <ClInclude Include="WindowSDL.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Src\Sprite\Sprite.h">
+      <Filter>Fichiers sources\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="WindowRayLib.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Src\Sprite\SpriteRayLib.h">
+      <Filter>Fichiers sources\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Src\Sprite\SpriteSDL.h">
+      <Filter>Fichiers sources\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteSDL.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Src\Window\Window.h">
+      <Filter>Fichiers sources\Window</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteRayLib.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Src\Window\WindowRayLib.h">
+      <Filter>Fichiers sources\Window</Filter>
     </ClInclude>
-    <ClInclude Include="App.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Src\Window\WindowSDL.h">
+      <Filter>Fichiers sources\Window</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Src\Ressources\masterBall.png">
+      <Filter>Fichiers sources\Ressources</Filter>
+    </Image>
   </ItemGroup>
 </Project>
