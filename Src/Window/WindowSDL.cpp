@@ -79,6 +79,8 @@ int WindowSDL::Draw()
 	SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
 
 	//DRAW HERE
+	//BOUNCING BALLS SCENE
+	//SDL_LoadBMP()
 
 	// Update the window display
 	SDL_UpdateWindowSurface(m_window);

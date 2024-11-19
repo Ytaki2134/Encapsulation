@@ -151,23 +151,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="App.cpp" />
     <ClCompile Include="Encapsulation.cpp" />
-    <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="SpriteRayLib.cpp" />
-    <ClCompile Include="SpriteSDL.cpp" />
-    <ClCompile Include="Window.cpp" />
-    <ClCompile Include="WindowRayLib.cpp" />
-    <ClCompile Include="WindowSDL.cpp" />
+    <ClCompile Include="Src\Core\App.cpp" />
+    <ClCompile Include="Src\Sprite\Sprite.cpp" />
+    <ClCompile Include="Src\Sprite\SpriteRayLib.cpp" />
+    <ClCompile Include="Src\Sprite\SpriteSDL.cpp" />
+    <ClCompile Include="Src\Window\Window.cpp" />
+    <ClCompile Include="Src\Window\WindowRayLib.cpp" />
+    <ClCompile Include="Src\Window\WindowSDL.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="App.h" />
-    <ClInclude Include="Sprite.h" />
-    <ClInclude Include="SpriteRayLib.h" />
-    <ClInclude Include="SpriteSDL.h" />
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="WindowRayLib.h" />
-    <ClInclude Include="WindowSDL.h" />
+    <ClInclude Include="Src\Core\App.h" />
+    <ClInclude Include="Src\Sprite\Sprite.h" />
+    <ClInclude Include="Src\Sprite\SpriteRayLib.h" />
+    <ClInclude Include="Src\Sprite\SpriteSDL.h" />
+    <ClInclude Include="Src\Window\Window.h" />
+    <ClInclude Include="Src\Window\WindowRayLib.h" />
+    <ClInclude Include="Src\Window\WindowSDL.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Src\Ressources\masterBall.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

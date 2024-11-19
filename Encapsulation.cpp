@@ -3,9 +3,9 @@
 #include <SDL.h>
 #include <iostream>
 #include <raylib.h>
-#include "App.h"
-#include "Window.h"
-#include "Sprite.h"
+#include "Src/Core/App.h"
+#include "Src/Window/Window.h"
+#include "Src/Sprite/Sprite.h"
 
 int main(int argc, char** args)
 {
