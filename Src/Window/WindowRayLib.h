@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Window.h"
+#include "../GameMode/GameModeRaylib.h"
 #include<raylib.h>
 class WindowRayLib : public Window
 {
@@ -12,7 +13,7 @@ public:
 	int Clear() override;
 	int Draw() override;
 
-
-
+private:
+	GameModeRaylib gameMode;
 };
 
