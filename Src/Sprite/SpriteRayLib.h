@@ -5,7 +5,7 @@ class SpriteRayLib : public Sprite
 {
 public:
 	SpriteRayLib();
-	void LoadSprite() override;
+	void LoadSprite(std::string pathImage) override;
 	void GetSprite() override;
 
 

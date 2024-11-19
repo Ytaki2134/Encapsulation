@@ -1,4 +1,5 @@
 #include "WindowRayLib.h"
+#include "../Sprite/SpriteRayLib.h"
 
 WindowRayLib::WindowRayLib(std::string winName, int SizeX, int SizeY)
 {
@@ -9,7 +10,9 @@ WindowRayLib::WindowRayLib(std::string winName, int SizeX, int SizeY)
 
 int WindowRayLib::Init()
 {
-
+	SpriteRayLib ball;
+	ball.LoadSprite("Src/Ressources/masterBall.png");
+	gameMode.AddSprite();
 	return 0;
 }
 

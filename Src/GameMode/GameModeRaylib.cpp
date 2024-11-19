@@ -7,3 +7,6 @@ void GameModeRaylib::CheckWin()
 {
 
 }
+void GameModeRaylib::AddSprite() {
+
+}
