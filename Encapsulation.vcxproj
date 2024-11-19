@@ -152,8 +152,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Encapsulation.cpp" />
-    <ClCompile Include="GameMode.cpp" />
     <ClCompile Include="Src\Core\App.cpp" />
+    <ClCompile Include="Src\GameMode\BouncingBallsGM.cpp" />
+    <ClCompile Include="Src\GameMode\GameMode.cpp" />
     <ClCompile Include="Src\Sprite\Sprite.cpp" />
     <ClCompile Include="Src\Sprite\SpriteRayLib.cpp" />
     <ClCompile Include="Src\Sprite\SpriteSDL.cpp" />
@@ -162,17 +163,19 @@
     <ClCompile Include="Src\Window\WindowSDL.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameMode.h" />
+    <Image Include="Src\Ressources\masterBall.bmp" />
+    <Image Include="Src\Ressources\masterBall.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="Src\Core\App.h" />
+    <ClInclude Include="Src\GameMode\BouncingBallsGM.h" />
+    <ClInclude Include="Src\GameMode\GameMode.h" />
     <ClInclude Include="Src\Sprite\Sprite.h" />
     <ClInclude Include="Src\Sprite\SpriteRayLib.h" />
     <ClInclude Include="Src\Sprite\SpriteSDL.h" />
     <ClInclude Include="Src\Window\Window.h" />
     <ClInclude Include="Src\Window\WindowRayLib.h" />
     <ClInclude Include="Src\Window\WindowSDL.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Src\Ressources\masterBall.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
