@@ -11,5 +11,8 @@ public:
 	int IsOpen() override;
 	int Clear() override;
 	int Draw() override;
+
+
+
 };
 

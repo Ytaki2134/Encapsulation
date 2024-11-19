@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Encapsulation.cpp" />
+    <ClCompile Include="GameMode.cpp" />
     <ClCompile Include="Src\Core\App.cpp" />
     <ClCompile Include="Src\Sprite\Sprite.cpp" />
     <ClCompile Include="Src\Sprite\SpriteRayLib.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="Src\Window\WindowSDL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameMode.h" />
     <ClInclude Include="Src\Core\App.h" />
     <ClInclude Include="Src\Sprite\Sprite.h" />
     <ClInclude Include="Src\Sprite\SpriteRayLib.h" />

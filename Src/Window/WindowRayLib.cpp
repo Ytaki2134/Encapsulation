@@ -9,6 +9,7 @@ WindowRayLib::WindowRayLib(std::string winName, int SizeX, int SizeY)
 
 int WindowRayLib::Init()
 {
+
 	return 0;
 }
 
@@ -18,10 +19,6 @@ int WindowRayLib::Open()
 	SetTargetFPS(60);
 	BeginDrawing();
 	ClearBackground(WHITE);
-
-
-
-
 	EndDrawing();
 	return 0;
 }
@@ -44,7 +41,7 @@ int WindowRayLib::Draw()
 {
 	BeginDrawing();
 	ClearBackground(WHITE);
-	DrawTexture(LoadTexture("pokeball.png"),50,50,WHITE);
+	DrawTexture(LoadTexture("Src/Ressources/masterBall.png"),50,50,WHITE);
 	EndDrawing();
 	return 0;
 }
