@@ -23,6 +23,7 @@ int main(int argc, char** args)
 		while (app.IsAppRunning())
 		{
 			app.EventLoop();
+			win->Draw();
 		}
 		break;
 
