@@ -18,6 +18,10 @@ int WindowRayLib::Open()
 	SetTargetFPS(60);
 	BeginDrawing();
 	ClearBackground(WHITE);
+
+
+
+
 	EndDrawing();
 	return 0;
 }
@@ -40,7 +44,7 @@ int WindowRayLib::Draw()
 {
 	BeginDrawing();
 	ClearBackground(WHITE);
-	//draw here
+	DrawTexture(LoadTexture("pokeball.png"),50,50,WHITE);
 	EndDrawing();
 	return 0;
 }

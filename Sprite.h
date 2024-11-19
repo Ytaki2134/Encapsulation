@@ -12,5 +12,6 @@ public:
 
 protected:
 	float x, y;
+	std::string path;
 };
 
