@@ -11,7 +11,7 @@ int main(int argc, char** args)
 {
 	App app;
 	//Change Desired Library Here
-	Library currentLibrary = RAYLIB;
+	Library currentLibrary = SDL;
 
 	Window* win = Window::MakeWindow("Encapsulation", 800, 600, currentLibrary);
 	win->Init();
