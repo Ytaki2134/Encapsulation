@@ -4,7 +4,7 @@
 class SpriteSDL : public Sprite
 {
 	SpriteSDL();
-	void LoadSprite() override;
+	void LoadSprite(std::string pathImage) override;
 	void GetSprite() override;
 };
 

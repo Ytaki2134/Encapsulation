@@ -5,7 +5,7 @@ SpriteSDL::SpriteSDL()
 
 }
 
-void SpriteSDL::LoadSprite()
+void SpriteSDL::LoadSprite(std::string pathImage)
 {
 
 }

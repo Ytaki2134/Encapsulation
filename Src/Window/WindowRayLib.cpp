@@ -12,7 +12,7 @@ int WindowRayLib::Init()
 {
 	SpriteRayLib ball;
 	ball.LoadSprite("Src/Ressources/masterBall.png");
-	gameMode.AddSprite();
+	
 	return 0;
 }
 

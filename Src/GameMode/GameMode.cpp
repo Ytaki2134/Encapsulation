@@ -1,5 +1,6 @@
 #include "GameMode.h"
 
+
 GameMode* GameMode::MakeGameMode(GameModeType gameMode)
 {
 	switch (gameMode)

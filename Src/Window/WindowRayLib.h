@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Window.h"
-#include "../GameMode/GameModeRaylib.h"
+#include "../GameMode/BouncingBallsGM.h"
 #include<raylib.h>
 class WindowRayLib : public Window
 {
@@ -14,6 +14,6 @@ public:
 	int Draw() override;
 
 private:
-	GameModeRaylib gameMode;
+	BouncingBallsGM gameMode;
 };
 

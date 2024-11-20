@@ -152,8 +152,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Encapsulation.cpp" />
-    <ClCompile Include="GameMode.cpp" />
-    <ClCompile Include="GameModeRaylib.cpp" />
     <ClCompile Include="Src\Core\App.cpp" />
     <ClCompile Include="Src\GameMode\BouncingBallsGM.cpp" />
     <ClCompile Include="Src\GameMode\GameMode.cpp" />
