@@ -165,6 +165,9 @@
   <ItemGroup>
     <ClInclude Include="GameMode.h" />
     <ClInclude Include="GameModeRaylib.h" />
+    <ClInclude Include="Src\Sprite\Sprite.h" />
+    <ClInclude Include="Src\Sprite\SpriteRayLib.h" />
+    <ClInclude Include="Src\Sprite\SpriteSDL.h" />
     <Image Include="Src\Ressources\masterBall.bmp" />
     <Image Include="Src\Ressources\masterBall.png" />
   </ItemGroup>

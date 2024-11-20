@@ -80,6 +80,21 @@
     <ClInclude Include="Src\GameMode\GameMode.h">
       <Filter>Fichiers d%27en-tête\GameMode</Filter>
     </ClInclude>
+    <ClInclude Include="GameMode.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="GameModeRaylib.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite\Sprite.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite\SpriteSDL.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite\SpriteRayLib.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Src\Ressources\masterBall.bmp">

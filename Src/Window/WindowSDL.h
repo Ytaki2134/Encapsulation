@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 #include <SDL.h>
-
 #include "Window.h"
+#include "../Core/App.h"
 
 class WindowSDL : public Window
 {
@@ -22,5 +22,6 @@ private:
 	SDL_Window* m_window = NULL;
 	SDL_Renderer* m_renderer = NULL;
 	GameMode* m_gamemode = NULL;
+	App app;
 };
 

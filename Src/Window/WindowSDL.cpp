@@ -9,6 +9,7 @@ WindowSDL::WindowSDL(std::string winName, int SizeX, int SizeY)
 
 int WindowSDL::Init(GameModeType* gameModeType)
 {
+
 	// Initialize SDL. SDL_Init will return -1 if it fails.
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
 		std::cout << "Error initializing SDL: " << SDL_GetError() << std::endl;
@@ -74,7 +75,7 @@ int WindowSDL::Open()
 
 int WindowSDL::IsOpen()
 {
-	if (m_window != NULL)
+	if (m_window != NULL || app.IsAppRunning())
 		return 0;
 
 	else
@@ -108,6 +109,7 @@ int WindowSDL::Draw()
 
 void WindowSDL::Update()
 {
+	app.EventLoop();
 	// Make everithing before update
 	m_gamemode->Update();
 }

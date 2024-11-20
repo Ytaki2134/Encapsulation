@@ -21,6 +21,7 @@ void App::EventLoop()
 
 		case SDL_QUIT:
 			m_isRunning = false;
+			
 			break;
 
 		default:
