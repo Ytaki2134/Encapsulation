@@ -71,6 +71,11 @@ int WindowRayLib::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position
 
 void WindowRayLib::Update()
 {
-	// meke everithing before update 
+	/*
+	for (auto& sprite : m_gamemode->GetSpriteVector())
+	{
+		
+	}
+	*/
 	m_gamemode->Update();
 }

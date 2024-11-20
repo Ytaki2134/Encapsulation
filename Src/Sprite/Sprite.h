@@ -26,5 +26,6 @@ public:
 
 protected:
 	std::string m_path;
+	int velos_x, velos_y = 0;
 };
 
