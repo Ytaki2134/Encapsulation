@@ -151,7 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BallCollider.cpp" />
     <ClCompile Include="Encapsulation.cpp" />
+    <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Src\Core\App.cpp" />
     <ClCompile Include="Src\GameMode\BouncingBallsGM.cpp" />
     <ClCompile Include="Src\GameMode\GameMode.cpp" />
@@ -172,9 +174,17 @@
     <Image Include="Src\Ressources\masterBall.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BallCollider.h" />
+    <ClInclude Include="QuadTree.h" />
     <ClInclude Include="Src\Core\App.h" />
     <ClInclude Include="Src\GameMode\BouncingBallsGM.h" />
     <ClInclude Include="Src\GameMode\GameMode.h" />
+    <ClInclude Include="Src\Sprite\Sprite.h" />
+    <ClInclude Include="Src\Sprite\SpriteRayLib.h" />
+    <ClInclude Include="Src\Sprite\SpriteSDL.h" />
+    <ClInclude Include="Src\Window\Window.h" />
+    <ClInclude Include="Src\Window\WindowRayLib.h" />
+    <ClInclude Include="Src\Window\WindowSDL.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -53,6 +53,11 @@ int WindowRayLib::Draw()
 	return 0;
 }
 
+int WindowRayLib::Update()
+{
+	return 0;
+}
+
 int WindowRayLib::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
 {
 	if (Sprite::MakeSpriteRayLib("Src/Ressources/masterBall.png", SizeX, SizeY, pos) != nullptr)

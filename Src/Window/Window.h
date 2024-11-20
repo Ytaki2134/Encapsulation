@@ -20,7 +20,7 @@ public:
 	virtual int IsOpen() = 0;
 	virtual int Clear() = 0;
 	virtual int Draw() = 0;
-	virtual void Update() = 0;
+	virtual int Update() = 0;
 	virtual int MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos) = 0;
 protected:
 	std::string m_winName;

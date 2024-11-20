@@ -6,6 +6,12 @@
 
 #include "Src/Window/Window.h"
 #include "Src/Sprite/Sprite.h"
+#include "QuadTree.h"
+
+int random_int(int min, int max)
+{
+	return min + rand() % (max + 1 - min);
+}
 
 int main(int argc, char** args)
 {
@@ -13,12 +19,29 @@ int main(int argc, char** args)
 	Library currentLibrary = RAYLIB;
 	GameModeType currentGamemode = BOUNCING_BALLS;
 
-	Window* win = Window::MakeWindow("Encapsulation", 800, 600, currentLibrary);
+	Window* win = Window::MakeWindow("Encapsulation", 400, 400, currentLibrary);
 	win->Init(&currentGamemode);
 	win->Open();
-	while (!win->IsOpen()) {
+
+	while (win->IsOpen() == 0)
+	{
 		win->Update();
+
+		////QUADTREE
+		//QTRectangle QTrectangle(0, 0, 400, 400);
+		//QuadTree quadtree(&QTrectangle, 4);
+
+		//for (int i = 0; i < 500; i++)
+		//{
+		//	QTPoint p(random_int(0, 400), random_int(0, 400));
+		//	quadtree.Insert(p);
+		//}
+		//quadtree.Show(static_cast<WindowSDL*>(win));
+		//system("pause");
+		//std::cout << "trash" << std::endl;
+		win->Clear();
 		win->Draw();
 	}
 	return 0;
 }
+
