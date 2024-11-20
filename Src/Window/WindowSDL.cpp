@@ -75,7 +75,7 @@ int WindowSDL::Open()
 
 int WindowSDL::IsOpen()
 {
-	if (m_window != NULL || app.IsAppRunning())
+	if (m_window != NULL && app.IsAppRunning())
 		return 0;
 
 	else

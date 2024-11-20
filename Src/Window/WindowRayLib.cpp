@@ -29,7 +29,7 @@ int WindowRayLib::Open()
 
 int WindowRayLib::IsOpen()
 {
-	if (WindowShouldClose)
+	if (!WindowShouldClose())
 		return 0;
 	else
 		return 1;
