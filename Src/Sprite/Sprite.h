@@ -22,8 +22,5 @@ public:
 
 	static Sprite* MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window);
 	static Sprite* MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window);
-
-protected:
-	std::string m_path;
 };
 

@@ -9,6 +9,8 @@ WindowSDL::WindowSDL(std::string winName, int SizeX, int SizeY)
 
 int WindowSDL::Init(GameModeType* gameModeType)
 {
+	m_app = App();
+
 	// Initialize SDL. SDL_Init will return -1 if it fails.
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
 		std::cout << "Error initializing SDL: " << SDL_GetError() << std::endl;
@@ -74,7 +76,7 @@ int WindowSDL::Open()
 
 int WindowSDL::IsOpen()
 {
-	if (m_window != NULL)
+	if (m_app.IsAppRunning())
 		return 0;
 
 	else
@@ -83,8 +85,12 @@ int WindowSDL::IsOpen()
 
 int WindowSDL::Clear()
 {
+	// Fill the window with a white rectangle
+	SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
 	if (SDL_RenderClear(m_renderer))
+	{
 		return 0;
+	}
 	else
 		return 1;
 }
@@ -95,7 +101,7 @@ int WindowSDL::Draw()
 	SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
 
 	//DRAW HERE
-	for (auto &sprite : m_gamemode->GetSpriteVector())
+	for (auto& sprite : m_gamemode->GetSpriteVector())
 	{
 		sprite->LoadSprite();
 	}
@@ -106,11 +112,17 @@ int WindowSDL::Draw()
 	return 0;
 }
 
+int WindowSDL::Update()
+{
+	m_app.EventLoop();
+	return 0;
+}
+
 int WindowSDL::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
 {
-	if (Sprite::MakeSpriteSDL("Src/Ressources/masterBall.bmp", SizeX, SizeY, pos, m_window) != nullptr)
+	m_gamemode->AddSprite(Sprite::MakeSpriteSDL("Src/Ressources/masterBall.bmp", SizeX, SizeY, pos, m_window));
+	if (m_gamemode != nullptr)
 	{
-		m_gamemode->AddSprite(Sprite::MakeSpriteSDL("Src/Ressources/masterBall.bmp", SizeX, SizeY, pos, m_window));
 		return 0;
 	}
 	else
@@ -125,4 +137,9 @@ int WindowSDL::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position po
 SDL_Window* WindowSDL::GetSDLWindow()
 {
 	return m_window;
+}
+
+SDL_Renderer* WindowSDL::GetSDLRenderer()
+{
+	return m_renderer;
 }

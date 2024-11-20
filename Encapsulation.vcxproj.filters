@@ -69,16 +69,46 @@
     <ClCompile Include="Src\GameMode\GameMode.cpp">
       <Filter>Fichiers sources\GameMode</Filter>
     </ClCompile>
+    <ClCompile Include="QuadTree.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BallCollider.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\Core\App.h">
-      <Filter>Fichiers sources\Core</Filter>
-    </ClInclude>
     <ClInclude Include="Src\GameMode\BouncingBallsGM.h">
       <Filter>Fichiers d%27en-tête\GameMode</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameMode\GameMode.h">
       <Filter>Fichiers d%27en-tête\GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Core\App.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite\Sprite.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite\SpriteRayLib.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite\SpriteSDL.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Window\Window.h">
+      <Filter>Fichiers d%27en-tête\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Window\WindowRayLib.h">
+      <Filter>Fichiers d%27en-tête\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Window\WindowSDL.h">
+      <Filter>Fichiers d%27en-tête\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BallCollider.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

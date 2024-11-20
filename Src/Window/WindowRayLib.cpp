@@ -49,6 +49,11 @@ int WindowRayLib::Draw()
 	return 0;
 }
 
+int WindowRayLib::Update()
+{
+	return 0;
+}
+
 int WindowRayLib::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
 {
 	return 0;
