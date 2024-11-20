@@ -10,17 +10,20 @@ struct Position
 	float y;
 };
 
+class SpriteSDL;
+class SpriteRayLib;
+class Window;
+
 class Sprite
 {
 public:
-	virtual void LoadSprite(std::string pathImage) = 0;
-	virtual void GetSprite() = 0;
+	virtual int LoadSprite() = 0;
+	virtual int GetSprite() = 0;
 
-	static SDL_Surface* MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window);
-	static SDL_Surface* MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window);
+	static Sprite* MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window);
+	static Sprite* MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window);
 
 protected:
-	float x, y;
-	std::string path;
+	std::string m_path;
 };
 

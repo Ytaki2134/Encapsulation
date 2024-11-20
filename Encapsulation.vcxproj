@@ -172,12 +172,6 @@
     <ClInclude Include="Src\Core\App.h" />
     <ClInclude Include="Src\GameMode\BouncingBallsGM.h" />
     <ClInclude Include="Src\GameMode\GameMode.h" />
-    <ClInclude Include="Src\Sprite\Sprite.h" />
-    <ClInclude Include="Src\Sprite\SpriteRayLib.h" />
-    <ClInclude Include="Src\Sprite\SpriteSDL.h" />
-    <ClInclude Include="Src\Window\Window.h" />
-    <ClInclude Include="Src\Window\WindowRayLib.h" />
-    <ClInclude Include="Src\Window\WindowSDL.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

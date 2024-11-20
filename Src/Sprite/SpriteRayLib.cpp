@@ -5,12 +5,12 @@ SpriteRayLib::SpriteRayLib()
 
 }
 
-void SpriteRayLib::LoadSprite(std::string pathImage)
+int SpriteRayLib::LoadSprite()
 {
-	path = pathImage;
+	return 0;
 }
 
-void SpriteRayLib::GetSprite()
+int SpriteRayLib::GetSprite()
 {
-
+	return 0;
 }

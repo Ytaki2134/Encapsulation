@@ -1,5 +1,4 @@
 #include "WindowRayLib.h"
-#include "../Sprite/SpriteRayLib.h"
 
 WindowRayLib::WindowRayLib(std::string winName, int SizeX, int SizeY)
 {
@@ -8,17 +7,18 @@ WindowRayLib::WindowRayLib(std::string winName, int SizeX, int SizeY)
 	m_sizeY = SizeY;
 }
 
-int WindowRayLib::Init()
+int WindowRayLib::Init(GameModeType* gameModeType)
 {
-	SpriteRayLib ball;
-	ball.LoadSprite("Src/Ressources/masterBall.png");
-	
-	return 0;
+	m_gamemode = GameMode::MakeGameMode(*gameModeType);
+	if (m_gamemode != nullptr)
+		return 0;
+	else
+		return 1;
 }
 
 int WindowRayLib::Open()
 {
-	InitWindow(m_sizeX, m_sizeY,m_winName.c_str());
+	InitWindow(m_sizeX, m_sizeY, m_winName.c_str());
 	SetTargetFPS(60);
 	BeginDrawing();
 	ClearBackground(WHITE);
@@ -44,7 +44,12 @@ int WindowRayLib::Draw()
 {
 	BeginDrawing();
 	ClearBackground(WHITE);
-	DrawTexture(LoadTexture("Src/Ressources/masterBall.png"),50,50,WHITE);
+	DrawTexture(LoadTexture("Src/Ressources/masterBall.png"), 50, 50, WHITE);
 	EndDrawing();
+	return 0;
+}
+
+int WindowRayLib::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
+{
 	return 0;
 }

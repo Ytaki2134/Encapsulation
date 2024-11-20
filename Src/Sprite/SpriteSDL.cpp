@@ -1,16 +1,18 @@
-#include "SpriteSDL.h"
+﻿#include "SpriteSDL.h"
+#include "../Window/WindowSDL.h"
 
 SpriteSDL::SpriteSDL()
 {
 
 }
 
-void SpriteSDL::LoadSprite(std::string pathImage)
+int SpriteSDL::LoadSprite()
 {
-
+	SDL_BlitScaled(m_surface, NULL, m_SDLwinSurface, &m_rect);
+	return 0;
 }
 
-void SpriteSDL::GetSprite()
+int SpriteSDL::GetSprite()
 {
-
+	return 0;
 }
