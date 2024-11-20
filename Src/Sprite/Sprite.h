@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <SDL.h>
+#include <raylib.h>
 
 struct Position
 {
@@ -21,7 +22,7 @@ public:
 	virtual int GetSprite() = 0;
 
 	static Sprite* MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window);
-	static Sprite* MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window);
+	static Sprite* MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos);
 
 protected:
 	std::string m_path;

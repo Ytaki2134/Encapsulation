@@ -7,5 +7,9 @@ public:
 	SpriteRayLib();
 	int LoadSprite() override;
 	int GetSprite() override;
+
+	Rectangle m_rect;
+	Image surface;
+
 };
 

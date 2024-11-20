@@ -11,7 +11,7 @@ int main(int argc, char** args)
 {
 	App app;
 	//Change Desired Library Here
-	Library currentLibrary = SDL;
+	Library currentLibrary = RAYLIB;
 	GameModeType currentGamemode = BOUNCING_BALLS;
 
 	Window* win = Window::MakeWindow("Encapsulation", 800, 600, currentLibrary);
@@ -31,7 +31,9 @@ int main(int argc, char** args)
 	case RAYLIB:
 		while (!WindowShouldClose())
 		{
-			win->Draw();
+			win->Update();
+			win->Draw();	
+			
 		}
 		break;
 

@@ -23,6 +23,7 @@ int WindowRayLib::Open()
 	BeginDrawing();
 	ClearBackground(WHITE);
 	EndDrawing();
+	m_gamemode->Init(this);
 	return 0;
 }
 
@@ -44,12 +45,32 @@ int WindowRayLib::Draw()
 {
 	BeginDrawing();
 	ClearBackground(WHITE);
-	DrawTexture(LoadTexture("Src/Ressources/masterBall.png"), 50, 50, WHITE);
+	for (auto& sprite : m_gamemode->GetSpriteVector())
+	{
+		sprite->LoadSprite();
+	}
 	EndDrawing();
 	return 0;
 }
 
 int WindowRayLib::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
 {
-	return 0;
+	if (Sprite::MakeSpriteRayLib("Src/Ressources/masterBall.png", SizeX, SizeY, pos) != nullptr)
+	{
+		m_gamemode->AddSprite(Sprite::MakeSpriteRayLib("Src/Ressources/masterBall.png", SizeX, SizeY, pos));
+		return 0;
+	}
+	else
+	{
+		std::cout << "Error creating sprite in scene: " << SDL_GetError() << std::endl;
+		system("pause");
+		// End the program
+		return 1;
+	}
+}
+
+void WindowRayLib::Update()
+{
+	// meke everithing before update 
+	m_gamemode->Update();
 }

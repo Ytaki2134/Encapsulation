@@ -13,6 +13,7 @@ public:
 	int IsOpen() override;
 	int Clear() override;
 	int Draw() override;
+	void Update() override;
 	int MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos) override;
 
 	SDL_Window* GetSDLWindow();

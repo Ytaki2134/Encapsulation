@@ -106,6 +106,12 @@ int WindowSDL::Draw()
 	return 0;
 }
 
+void WindowSDL::Update()
+{
+	// Make everithing before update
+	m_gamemode->Update();
+}
+
 int WindowSDL::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
 {
 	if (Sprite::MakeSpriteSDL("Src/Ressources/masterBall.bmp", SizeX, SizeY, pos, m_window) != nullptr)

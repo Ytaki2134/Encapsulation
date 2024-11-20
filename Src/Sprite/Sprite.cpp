@@ -24,7 +24,19 @@ Sprite* Sprite::MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY, Positio
 	}
 }
 
-Sprite* Sprite::MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window)
+Sprite* Sprite::MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos)
 {
-	return nullptr;
+	SpriteRayLib* mysprite = new SpriteRayLib();
+	Image surface = LoadImage(imgPath.c_str());
+	if (&surface) {
+
+		Rectangle rect = { pos.x, pos.y, SizeX, SizeY };
+		mysprite->m_rect = rect;
+		mysprite->surface = surface;
+		return mysprite;
+	}
+	else {
+		std::cout << "Error Loading Sprite: " << SDL_GetError() << std::endl;
+		return nullptr;
+	}
 }
