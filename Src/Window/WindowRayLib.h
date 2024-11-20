@@ -14,7 +14,6 @@ public:
 	int Draw() override;
 	int Update() override;
 	int MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos) override;
-	void Update() override;
 
 
 private:

@@ -55,6 +55,13 @@ int WindowRayLib::Draw()
 
 int WindowRayLib::Update()
 {
+	/*
+	for (auto& sprite : m_gamemode->GetSpriteVector())
+	{
+		
+	}
+	*/
+	m_gamemode->Update();
 	return 0;
 }
 
@@ -72,15 +79,4 @@ int WindowRayLib::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position
 		// End the program
 		return 1;
 	}
-}
-
-void WindowRayLib::Update()
-{
-	/*
-	for (auto& sprite : m_gamemode->GetSpriteVector())
-	{
-		
-	}
-	*/
-	m_gamemode->Update();
 }
