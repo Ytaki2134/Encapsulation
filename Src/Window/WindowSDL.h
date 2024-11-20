@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include "Window.h"
 #include "../Core/App.h"
 
@@ -15,7 +16,7 @@ public:
 	int Draw() override;
 	int Update() override;
 	int MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos) override;
-
+	void DrawFps();
 	SDL_Window* GetSDLWindow();
 	SDL_Renderer* GetSDLRenderer();
 private:
@@ -24,5 +25,7 @@ private:
 	GameMode* m_gamemode = NULL;
 	SDL_Renderer* m_renderer = NULL;
 	App m_app;
+	float begin = 0;
+	float end = 0;
 };
 

@@ -20,12 +20,13 @@ class Sprite
 public:
 	virtual int LoadSprite() = 0;
 	virtual int GetSprite() = 0;
-
+	virtual int Update() = 0;
 	static Sprite* MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window);
 	static Sprite* MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos);
 
 protected:
 	std::string m_path;
-	int velos_x, velos_y = 0;
+	float velos_x = 1;
+	float velos_y = 1;
 };
 

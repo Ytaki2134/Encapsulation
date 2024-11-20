@@ -9,6 +9,7 @@ public:
 	SpriteSDL();
 	int LoadSprite() override;
 	int GetSprite() override;
+	int Update() override;
 public:
 	SDL_Rect m_rect;
 	SDL_Surface* m_surface = nullptr;

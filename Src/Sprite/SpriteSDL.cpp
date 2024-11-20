@@ -17,3 +17,8 @@ int SpriteSDL::GetSprite()
 {
 	return 0;
 }
+
+int SpriteSDL::Update()
+{
+	return 0;
+}

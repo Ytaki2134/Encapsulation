@@ -45,6 +45,8 @@ int WindowRayLib::Draw()
 {
 	BeginDrawing();
 	ClearBackground(WHITE);
+	DrawFPS(10, 10);
+
 	for (auto& sprite : m_gamemode->GetSpriteVector())
 	{
 		sprite->LoadSprite();
@@ -55,12 +57,12 @@ int WindowRayLib::Draw()
 
 int WindowRayLib::Update()
 {
-	/*
+	
 	for (auto& sprite : m_gamemode->GetSpriteVector())
 	{
-		
+		sprite->Update();
 	}
-	*/
+	
 	m_gamemode->Update();
 	return 0;
 }

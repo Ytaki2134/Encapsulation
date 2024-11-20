@@ -85,6 +85,7 @@ int WindowSDL::IsOpen()
 
 int WindowSDL::Clear()
 {
+	begin = SDL_GetTicks();
 	// Fill the window with a white rectangle
 	SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
 	if (SDL_RenderClear(m_renderer))
@@ -97,18 +98,20 @@ int WindowSDL::Clear()
 
 int WindowSDL::Draw()
 {
+
 	// Fill the window with a white rectangle
 	SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
 
 	//DRAW HERE
-	for (auto& sprite : m_gamemode->GetSpriteVector())
+	/*for (auto& sprite : m_gamemode->GetSpriteVector())
 	{
 		sprite->LoadSprite();
-	}
+	}*/
 
 	// Update the window display
+	end = SDL_GetTicks();
+	this->DrawFps();
 	SDL_UpdateWindowSurface(m_window);
-
 	return 0;
 }
 
@@ -132,6 +135,24 @@ int WindowSDL::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position po
 		// End the program
 		return 1;
 	}
+}
+
+void WindowSDL::DrawFps()
+{
+	TTF_Init();
+	TTF_Font* font = NULL;
+	font = TTF_OpenFont("times.ttf", 12);
+	float time = end - begin;
+	if (time > 1000)
+	{
+		begin = 0;
+		end = 0;
+	}
+	SDL_Color noir = { 0, 0, 0 };
+	SDL_Surface* texte = TTF_RenderText_Blended(font, "coucou", noir);
+	TTF_CloseFont(font);
+	SDL_Delay(1000 / time);
+
 }
 
 SDL_Window* WindowSDL::GetSDLWindow()
