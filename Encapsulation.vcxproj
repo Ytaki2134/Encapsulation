@@ -178,6 +178,12 @@
     <ClInclude Include="Src\Window\WindowRayLib.h" />
     <ClInclude Include="Src\Window\WindowSDL.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="Src\Ressources\font\times.ttf" />
+    <Font Include="Src\Ressources\font\timesbd.ttf" />
+    <Font Include="Src\Ressources\font\timesbi.ttf" />
+    <Font Include="Src\Ressources\font\timesi.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

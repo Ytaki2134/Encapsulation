@@ -5,10 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Fichiers de ressources">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -22,20 +18,27 @@
     <Filter Include="Fichiers sources\Core">
       <UniqueIdentifier>{a79be105-cfd3-4a79-8fd7-0307ef495b0f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\Core">
-      <UniqueIdentifier>{88de47a5-40c7-42b9-b9bd-e6d8c82aa717}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\GameMode">
-      <UniqueIdentifier>{43f27769-e998-4439-88bd-9c26440ea6b3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Window">
-      <UniqueIdentifier>{10956b76-427d-470c-a369-0751b4d7e8b4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Sprite">
-      <UniqueIdentifier>{59872bef-bc6e-4035-991c-599f40e4af50}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers sources\GameMode">
       <UniqueIdentifier>{1a2cf6eb-ab93-4a30-bf8a-ad074e42dd45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources\Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources\Fichiers d%27en-tête\Core">
+      <UniqueIdentifier>{88de47a5-40c7-42b9-b9bd-e6d8c82aa717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources\Fichiers d%27en-tête\GameMode">
+      <UniqueIdentifier>{43f27769-e998-4439-88bd-9c26440ea6b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources\Fichiers d%27en-tête\Window">
+      <UniqueIdentifier>{10956b76-427d-470c-a369-0751b4d7e8b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources\Fichiers d%27en-tête\Sprite">
+      <UniqueIdentifier>{59872bef-bc6e-4035-991c-599f40e4af50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources\Fichiers d%27en-tête\Font">
+      <UniqueIdentifier>{5152eec3-9fe4-42bf-89da-32b122b446cd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,43 +81,28 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\GameMode\BouncingBallsGM.h">
-      <Filter>Fichiers d%27en-tête\GameMode</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête\GameMode</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameMode\GameMode.h">
-      <Filter>Fichiers d%27en-tête\GameMode</Filter>
-    </ClInclude>
-    <ClInclude Include="GameMode.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GameModeRaylib.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête\GameMode</Filter>
     </ClInclude>
     <ClInclude Include="Src\Core\App.h">
-      <Filter>Fichiers d%27en-tête\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Sprite\Sprite.h">
-      <Filter>Fichiers d%27en-tête\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Sprite\SpriteRayLib.h">
-      <Filter>Fichiers d%27en-tête\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Sprite\SpriteSDL.h">
-      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête\Core</Filter>
     </ClInclude>
     <ClInclude Include="Src\Window\Window.h">
-      <Filter>Fichiers d%27en-tête\Window</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête\Window</Filter>
     </ClInclude>
     <ClInclude Include="Src\Window\WindowRayLib.h">
-      <Filter>Fichiers d%27en-tête\Window</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête\Window</Filter>
     </ClInclude>
     <ClInclude Include="Src\Window\WindowSDL.h">
-      <Filter>Fichiers d%27en-tête\Window</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête\Window</Filter>
     </ClInclude>
     <ClInclude Include="QuadTree.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="BallCollider.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -124,5 +112,19 @@
     <Image Include="Src\Ressources\masterBall.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Src\Ressources\font\times.ttf">
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête\Font</Filter>
+    </Font>
+    <Font Include="Src\Ressources\font\timesbd.ttf">
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête\Font</Filter>
+    </Font>
+    <Font Include="Src\Ressources\font\timesbi.ttf">
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête\Font</Filter>
+    </Font>
+    <Font Include="Src\Ressources\font\timesi.ttf">
+      <Filter>Fichiers de ressources\Fichiers d%27en-tête\Font</Filter>
+    </Font>
   </ItemGroup>
 </Project>

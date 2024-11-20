@@ -103,10 +103,10 @@ int WindowSDL::Draw()
 	SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
 
 	//DRAW HERE
-	/*for (auto& sprite : m_gamemode->GetSpriteVector())
+	for (auto& sprite : m_gamemode->GetSpriteVector())
 	{
 		sprite->LoadSprite();
-	}*/
+	}
 
 	// Update the window display
 	end = SDL_GetTicks();
@@ -141,17 +141,31 @@ void WindowSDL::DrawFps()
 {
 	TTF_Init();
 	TTF_Font* font = NULL;
-	font = TTF_OpenFont("times.ttf", 12);
-	float time = end - begin;
+	font = TTF_OpenFont("Src/Ressources/font/times.ttf", 20);
+	float time = end-begin;
+	
+	if (font != NULL) {
+
+		SDL_Rect postextfps;
+		postextfps.x = 100;
+		postextfps.y = 100;
+		SDL_Color noir = { 0, 0, 0 }; //attention ce n'est pas un Uint32
+
+		std::string txt = std::to_string((int)time);
+		txt = "FPS: " + txt ;
+		SDL_Surface* texte = TTF_RenderText_Blended(font,txt.c_str(), noir);
+		SDL_BlitSurface(texte, NULL, m_winSurface, NULL);
+		SDL_FreeSurface(texte); //On oublie toujours pas
+		TTF_CloseFont(font);
+	}
+	else { std::cout << "foirage à l'ouverture de times.ttf" << std::endl; }
+
+	TTF_Quit();
 	if (time > 1000)
 	{
 		begin = 0;
 		end = 0;
 	}
-	SDL_Color noir = { 0, 0, 0 };
-	SDL_Surface* texte = TTF_RenderText_Blended(font, "coucou", noir);
-	TTF_CloseFont(font);
-	SDL_Delay(1000 / time);
 
 }
 
