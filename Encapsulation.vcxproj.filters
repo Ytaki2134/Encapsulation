@@ -21,29 +21,24 @@
     <Filter Include="Fichiers sources\GameMode">
       <UniqueIdentifier>{1a2cf6eb-ab93-4a30-bf8a-ad074e42dd45}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Physics">
-      <UniqueIdentifier>{c00acaec-7d70-449a-8726-0ac7702b7bbe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers d%27en-tête">
-      <UniqueIdentifier>{3560df1f-9758-4234-acc1-fd0622939f6c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\GameMode">
-      <UniqueIdentifier>{e05d1e63-640e-4805-be36-5a9917269442}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Sprite">
-      <UniqueIdentifier>{a609fda9-2f19-4a62-b906-d345b980e50c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Physics">
-      <UniqueIdentifier>{5b5629f4-5db3-4ecf-bd2f-39f3dc0da5f8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Window">
-      <UniqueIdentifier>{df3a86b0-1666-4e2d-952b-8b2e154143fb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers de ressources\Font">
-      <UniqueIdentifier>{5436b24b-00ba-42a0-9714-54148de23d50}</UniqueIdentifier>
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
     <Filter Include="Fichiers d%27en-tête\Core">
-      <UniqueIdentifier>{6fb3a92a-8684-4137-b26f-b7060adc414b}</UniqueIdentifier>
+      <UniqueIdentifier>{88de47a5-40c7-42b9-b9bd-e6d8c82aa717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\GameMode">
+      <UniqueIdentifier>{43f27769-e998-4439-88bd-9c26440ea6b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Window">
+      <UniqueIdentifier>{10956b76-427d-470c-a369-0751b4d7e8b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Sprite">
+      <UniqueIdentifier>{59872bef-bc6e-4035-991c-599f40e4af50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Font">
+      <UniqueIdentifier>{5152eec3-9fe4-42bf-89da-32b122b446cd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +80,41 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\GameMode\BouncingBallsGM.h">
+      <Filter>Fichiers d%27en-tête\GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GameMode\GameMode.h">
+      <Filter>Fichiers d%27en-tête\GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Core\App.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Window\Window.h">
+      <Filter>Fichiers d%27en-tête\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Window\WindowRayLib.h">
+      <Filter>Fichiers d%27en-tête\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Window\WindowSDL.h">
+      <Filter>Fichiers d%27en-tête\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BallCollider.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite\Sprite.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite\SpriteRayLib.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite\SpriteSDL.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <Image Include="Src\Ressources\masterBall.bmp">
       <Filter>Fichiers de ressources</Filter>
     </Image>
@@ -94,16 +124,16 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Src\Ressources\font\times.ttf">
-      <Filter>Fichiers de ressources\Font</Filter>
+      <Filter>Fichiers d%27en-tête\Font</Filter>
     </Font>
     <Font Include="Src\Ressources\font\timesbd.ttf">
-      <Filter>Fichiers de ressources\Font</Filter>
+      <Filter>Fichiers d%27en-tête\Font</Filter>
     </Font>
     <Font Include="Src\Ressources\font\timesbi.ttf">
-      <Filter>Fichiers de ressources\Font</Filter>
+      <Filter>Fichiers d%27en-tête\Font</Filter>
     </Font>
     <Font Include="Src\Ressources\font\timesi.ttf">
-      <Filter>Fichiers de ressources\Font</Filter>
+      <Filter>Fichiers d%27en-tête\Font</Filter>
     </Font>
   </ItemGroup>
   <ItemGroup>
