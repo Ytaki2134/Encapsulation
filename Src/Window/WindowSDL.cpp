@@ -134,9 +134,9 @@ int WindowSDL::Draw()
 int WindowSDL::Update()
 {
 	m_app.EventLoop();
-	for (auto& sprite : m_gamemode->GetSpriteVector())
+	for (auto& circle : *m_circlePhysics->GetCirleList())
 	{
-		sprite->Update();
+		circle.sprite->Update();
 	}
 	return 0;
 }

@@ -21,9 +21,13 @@ int SpriteSDL::GetSprite()
 
 int SpriteSDL::Update()
 {
-	if (((m_rect.x + velos_x + m_rect.w) > m_SDLwinSurface->w) ||
+	int w, h;
+	SDL_GetRendererOutputSize(m_renderer, &w, &h);
+
+	if (((m_rect.x + velos_x + m_rect.w) > w) ||
 		((m_rect.x + velos_x) < 0)) velos_x *= -1;
-	if (((m_rect.y + velos_y + m_rect.h) > m_SDLwinSurface->h) ||
+
+	if (((m_rect.y + velos_y + m_rect.h) > h) ||
 		((m_rect.y + velos_y) < 0)) velos_y *= -1;
 
 	m_rect.x += velos_x;

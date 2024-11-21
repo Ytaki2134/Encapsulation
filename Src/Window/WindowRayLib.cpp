@@ -67,9 +67,9 @@ int WindowRayLib::Draw()
 int WindowRayLib::Update()
 {
 	
-	for (auto& sprite : m_gamemode->GetSpriteVector())
+	for (auto& circle : *m_circlePhysics->GetCirleList())
 	{
-		sprite->Update();
+		circle.sprite->Update();
 	}
 	
 	//m_gamemode->Update();
