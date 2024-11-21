@@ -16,7 +16,7 @@ int random_int(int min, int max)
 int main(int argc, char** args)
 {
 	//Change Desired Library Here
-	Library currentLibrary = RAYLIB;
+	Library currentLibrary = SDL;
 	GameModeType currentGamemode = BOUNCING_BALLS;
 	int fps = 60;
 

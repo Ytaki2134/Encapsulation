@@ -122,12 +122,12 @@ int WindowSDL::Draw()
 		circle.sprite->LoadSprite();
 	}
 
-	// Update the window display
-		SDL_RenderPresent(m_renderer);
-
-
 	this->DrawFps();
-	SDL_UpdateWindowSurface(m_window);
+	// Update the window display
+	SDL_RenderPresent(m_renderer);
+
+
+	//SDL_UpdateWindowSurface(m_window);
 	return 0;
 }
 
@@ -177,9 +177,21 @@ void WindowSDL::DrawFps()
 
 		std::string txt = std::to_string(fps );
 		txt = "FPS: " + txt ;
-		SDL_Surface* texte = TTF_RenderText_Blended(font,txt.c_str(), noir);
-		SDL_BlitSurface(texte, NULL, m_winSurface, NULL);
-		SDL_FreeSurface(texte); 
+		
+		SDL_Surface* text;
+		// Set color to black
+		SDL_Color color = { 0, 0, 0 };
+
+		text = TTF_RenderText_Solid(font, txt.c_str(), color);
+		SDL_Texture* text_texture;
+		text_texture = SDL_CreateTextureFromSurface(m_renderer, text);
+
+		SDL_Rect dest = { 0, 0, text->w, text->h };
+		SDL_RenderCopy(m_renderer,text_texture,NULL, &dest);
+
+
+		//SDL_RenderCopy(texte, NULL, m_winSurface, NULL);
+		SDL_FreeSurface(text); 
 		TTF_CloseFont(font);
 	}
 	else { std::cout << "foirage à l'ouverture de times.ttf" << std::endl; }

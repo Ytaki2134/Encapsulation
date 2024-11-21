@@ -28,7 +28,7 @@ public:
 
 protected:
 	std::string m_path;
-	int velos_x = 0, velos_y = 0;
+	int velos_x = 1, velos_y = 1;
 	Circle* m_circleCollider;
 };
 
