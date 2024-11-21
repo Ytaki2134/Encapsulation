@@ -18,7 +18,7 @@ int main(int argc, char** args)
 	//Change Desired Library Here
 	Library currentLibrary = SDL;
 	GameModeType currentGamemode = BOUNCING_BALLS;
-	int fps = 150;
+	int fps = 60;
 
 	Window* win = Window::MakeWindow("Encapsulation", 410, 410, currentLibrary,fps);
 	win->Init(&currentGamemode);

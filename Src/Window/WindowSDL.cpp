@@ -163,13 +163,13 @@ void WindowSDL::DrawFps()
 		SDL_Rect postextfps;
 		postextfps.x = 100;
 		postextfps.y = 100;
-		SDL_Color noir = { 0, 0, 0 }; //attention ce n'est pas un Uint32
+		SDL_Color noir = { 0, 0, 0 }; 
 
-		std::string txt = std::to_string((int)     end );
+		std::string txt = std::to_string(fps );
 		txt = "FPS: " + txt ;
 		SDL_Surface* texte = TTF_RenderText_Blended(font,txt.c_str(), noir);
 		SDL_BlitSurface(texte, NULL, m_winSurface, NULL);
-		SDL_FreeSurface(texte); //On oublie toujours pas
+		SDL_FreeSurface(texte); 
 		TTF_CloseFont(font);
 	}
 	else { std::cout << "foirage à l'ouverture de times.ttf" << std::endl; }
