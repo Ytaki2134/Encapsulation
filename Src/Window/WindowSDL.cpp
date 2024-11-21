@@ -1,16 +1,20 @@
 ﻿#include "WindowSDL.h"
 
-WindowSDL::WindowSDL(std::string winName, int SizeX, int SizeY)
+WindowSDL::WindowSDL(std::string winName, int SizeX, int SizeY, int newfps)
 {
 	m_winName = winName;
 	m_sizeX = SizeX;
 	m_sizeY = SizeY;
+	fps = newfps;
 }
 
 int WindowSDL::Init(GameModeType* gameModeType)
 {
 	m_app = App();
 
+
+	//initialize desireDelta
+	desireDelta = 1000 / fps;
 	// Initialize SDL. SDL_Init will return -1 if it fails.
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
 		std::cout << "Error initializing SDL: " << SDL_GetError() << std::endl;
@@ -85,7 +89,8 @@ int WindowSDL::IsOpen()
 
 int WindowSDL::Clear()
 {
-	begin = SDL_GetTicks();
+	Loop = SDL_GetTicks();
+
 	// Fill the window with a white rectangle
 	SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
 	if (SDL_RenderClear(m_renderer))
@@ -109,7 +114,8 @@ int WindowSDL::Draw()
 	}
 
 	// Update the window display
-	end = SDL_GetTicks();
+
+
 	this->DrawFps();
 	SDL_UpdateWindowSurface(m_window);
 	return 0;
@@ -118,6 +124,10 @@ int WindowSDL::Draw()
 int WindowSDL::Update()
 {
 	m_app.EventLoop();
+	for (auto& sprite : m_gamemode->GetSpriteVector())
+	{
+		sprite->Update();
+	}
 	return 0;
 }
 
@@ -139,10 +149,14 @@ int WindowSDL::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position po
 
 void WindowSDL::DrawFps()
 {
+	int end = SDL_GetTicks() - Loop;
+	if (end <desireDelta)
+		SDL_Delay(desireDelta-end);
+
+
 	TTF_Init();
 	TTF_Font* font = NULL;
 	font = TTF_OpenFont("Src/Ressources/font/times.ttf", 20);
-	float time = end-begin;
 	
 	if (font != NULL) {
 
@@ -151,7 +165,7 @@ void WindowSDL::DrawFps()
 		postextfps.y = 100;
 		SDL_Color noir = { 0, 0, 0 }; //attention ce n'est pas un Uint32
 
-		std::string txt = std::to_string((int)time);
+		std::string txt = std::to_string((int)     end );
 		txt = "FPS: " + txt ;
 		SDL_Surface* texte = TTF_RenderText_Blended(font,txt.c_str(), noir);
 		SDL_BlitSurface(texte, NULL, m_winSurface, NULL);
@@ -161,11 +175,6 @@ void WindowSDL::DrawFps()
 	else { std::cout << "foirage à l'ouverture de times.ttf" << std::endl; }
 
 	TTF_Quit();
-	if (time > 1000)
-	{
-		begin = 0;
-		end = 0;
-	}
 
 }
 

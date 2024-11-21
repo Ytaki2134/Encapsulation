@@ -1,10 +1,11 @@
 #include "WindowRayLib.h"
 
-WindowRayLib::WindowRayLib(std::string winName, int SizeX, int SizeY)
+WindowRayLib::WindowRayLib(std::string winName, int SizeX, int SizeY,int newfps)
 {
 	m_winName = winName;
 	m_sizeX = SizeX;
 	m_sizeY = SizeY;
+	fps = newfps;
 }
 
 int WindowRayLib::Init(GameModeType* gameModeType)
@@ -19,7 +20,7 @@ int WindowRayLib::Init(GameModeType* gameModeType)
 int WindowRayLib::Open()
 {
 	InitWindow(m_sizeX, m_sizeY, m_winName.c_str());
-	SetTargetFPS(60);
+	SetTargetFPS(fps);
 	BeginDrawing();
 	ClearBackground(WHITE);
 	EndDrawing();

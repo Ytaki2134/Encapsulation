@@ -6,7 +6,7 @@
 class WindowRayLib : public Window
 {
 public:
-	WindowRayLib(std::string winName, int SizeX, int SizeY);
+	WindowRayLib(std::string winName, int SizeX, int SizeY, int fps);
 	int Init(GameModeType* gameModeType) override;
 	int Open() override;
 	int IsOpen() override;
@@ -18,5 +18,6 @@ public:
 
 private:
 	GameMode* m_gamemode = NULL;
+	int fps;
 };
 
