@@ -36,6 +36,8 @@ Sprite* Sprite::MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Posi
 		Rectangle rect = { pos.x, pos.y, SizeX, SizeY };
 		mysprite->m_rect = rect;
 		mysprite->surface = surface;
+		mysprite->LoadTexture();
+
 		return mysprite;
 	}
 	else {

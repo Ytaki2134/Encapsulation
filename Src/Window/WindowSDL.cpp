@@ -135,7 +135,7 @@ int WindowSDL::Update()
 	m_app.EventLoop();
 	for (auto& circle : *m_circlePhysics->GetCirleList())
 	{
-		circle.sprite->Update();
+		circle.Update();
 	}
 	return 0;
 }

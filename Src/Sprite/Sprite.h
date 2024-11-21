@@ -21,8 +21,13 @@ class Sprite
 {
 public:
 	virtual int LoadSprite() = 0;
-	virtual int GetSprite() = 0;
-	virtual int Update() = 0;
+	virtual int GetSprite_x() = 0;
+	virtual int GetSprite_y() = 0;
+	virtual int GetSprite_w() = 0;
+	virtual int GetSprite_h() = 0;
+	virtual int Update(int,int) = 0;
+	virtual void  GetSizeWin(int* w, int* h) = 0;
+
 	static Sprite* MakeSpriteSDL(std::string imgPath, int SizeX, int SizeY, Position pos, SDL_Window* window);
 	static Sprite* MakeSpriteRayLib(std::string imgPath, int SizeX, int SizeY, Position pos);
 

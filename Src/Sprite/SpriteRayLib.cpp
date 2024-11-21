@@ -7,31 +7,50 @@ SpriteRayLib::SpriteRayLib()
 
 }
 
-int SpriteRayLib::LoadSprite()
+int SpriteRayLib::LoadTexture()
 {
 	ImageResize(&surface, m_rect.width, m_rect.height);
-	DrawTexture(LoadTextureFromImage(surface) ,m_rect.x ,m_rect.y ,WHITE);
 
 	return 0;
 }
 
-int SpriteRayLib::GetSprite()
+
+int SpriteRayLib::LoadSprite()
 {
+	if (texture.id == 0) {
+		texture = LoadTextureFromImage(surface);
+	}
+	DrawTexture(texture,m_rect.x ,m_rect.y ,WHITE);
 	return 0;
 }
 
-int SpriteRayLib::Update()
+int SpriteRayLib::GetSprite_x()
 {
+	return m_rect.x;
+}
+int SpriteRayLib::GetSprite_y()
+{
+	return m_rect.y;
+}
+int SpriteRayLib::GetSprite_w()
+{
+	return m_rect.width;
+}
+int SpriteRayLib::GetSprite_h()
+{
+	return m_rect.height;
+}
 
-	if (((m_rect.x + velos_x + m_rect.width ) > GetScreenWidth()) ||
-		((m_rect.x + velos_x  ) < 0)) velos_x *= -1;
-	if (((m_rect.y +velos_y+ m_rect.height ) > GetScreenHeight()) ||
-		((m_rect.y + velos_y  ) < 0)) velos_y *= -1;
-
-	m_rect.x += velos_x;
-	//m_rect.width += velos_x;
-	m_rect.y+= velos_y;
-	//m_rect.height += velos_y;
+int SpriteRayLib::Update(int x, int y )
+{
+	m_rect.x = x;
+	m_rect.y = y;
 	return 0;
+}
+
+void SpriteRayLib::GetSizeWin(int* w, int* h)
+{
+	*w =  (int)GetScreenWidth();
+	*h = (int)GetScreenHeight();
 }
 

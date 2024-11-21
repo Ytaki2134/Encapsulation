@@ -9,6 +9,7 @@ struct Circle
 {
 	Circle() {};
 	Circle(float posX, float posY, float radius, std::string imgPath) { x = posX; y = posY; r = radius; this->imgPath = imgPath; }
+	int Update();;
 	float x, y;
 	float r;
 	float vx = 0, vy = 0;

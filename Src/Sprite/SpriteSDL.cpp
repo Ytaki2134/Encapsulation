@@ -14,25 +14,33 @@ int SpriteSDL::LoadSprite()
 	return 0;
 }
 
-int SpriteSDL::GetSprite()
+int SpriteSDL::GetSprite_x()
 {
-	return 0;
+	return m_rect.x;
 }
 
-int SpriteSDL::Update()
+int SpriteSDL::GetSprite_y()
 {
-	int w, h;
-	SDL_GetRendererOutputSize(m_renderer, &w, &h);
+	return m_rect.y;
+}
 
-	if (((m_rect.x + velos_x + m_rect.w) > w) ||
-		((m_rect.x + velos_x) < 0)) velos_x *= -1;
+int SpriteSDL::GetSprite_w()
+{
+	return m_rect.w;
+}
 
-	if (((m_rect.y + velos_y + m_rect.h) > h) ||
-		((m_rect.y + velos_y) < 0)) velos_y *= -1;
+int SpriteSDL::GetSprite_h()
+{
+	return m_rect.h;
+}
 
-	m_rect.x += velos_x;
-	//m_rect.width += velos_x;
-	m_rect.y += velos_y;
-	//m_rect.height += velos_y;
+int SpriteSDL::Update(int x, int y)
+{
+	m_rect.x = x;
+	m_rect.y = y;
 	return 0;
+}
+void SpriteSDL::GetSizeWin(int * w,int*  h) {
+
+	SDL_GetRendererOutputSize(m_renderer, w, h);
 }

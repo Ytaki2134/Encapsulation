@@ -9,8 +9,12 @@ class SpriteSDL : public Sprite
 public:
 	SpriteSDL();
 	int LoadSprite() override;
-	int GetSprite() override;
-	int Update() override;
+	int GetSprite_x() override;
+	int GetSprite_y() override;
+	int GetSprite_w() override;
+	int GetSprite_h() override;
+	int Update(int,int) override;
+	void GetSizeWin(int* w, int* h) override;
 public:
 	SDL_Rect m_rect;
 	SDL_Texture* m_texture = nullptr;

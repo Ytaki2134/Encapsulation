@@ -46,12 +46,16 @@ void CirclePhysics::SetVelocityRandom(Circle* targetCircle)
 {
     int minVelocity = -1;
     int maxVelocity = 1;
-
-    int randomNum = rand() % (maxVelocity - (minVelocity) + 1) + minVelocity;
-    int randomNum2 = rand() % (maxVelocity - (minVelocity) + 1) + minVelocity;
+    int randomNum;
+    int randomNum2;
+    do
+    {
+        randomNum = rand() % (maxVelocity - (minVelocity) + 1) + minVelocity;
+        randomNum2 = rand() % (maxVelocity - (minVelocity) + 1) + minVelocity;
+    } while (randomNum == 0 && randomNum2 == 0);
 
     targetCircle->vx = randomNum;
-    targetCircle->vy = randomNum;
+    targetCircle->vy = randomNum2;
 }
 
 std::vector<Circle>* CirclePhysics::GetCirleList()
@@ -73,7 +77,7 @@ Circle* CirclePhysics::AddCircle(std::string imgPath, float x, float y, float r)
 {
     Circle tempCircle;
     tempCircle.x = x; tempCircle.y = y;
-    tempCircle.vx = 0; tempCircle.vy = 0;
+    SetVelocityRandom(&tempCircle);
     tempCircle.ax = 0; tempCircle.ay = 0;
     tempCircle.r = r;
     tempCircle.imgPath = imgPath;
@@ -82,3 +86,22 @@ Circle* CirclePhysics::AddCircle(std::string imgPath, float x, float y, float r)
     m_circleList.emplace_back(tempCircle);
     return &tempCircle;
 }
+
+int Circle::Update()
+{
+    int w, h;
+    sprite->GetSizeWin(&w, &h);
+    int x = sprite->GetSprite_x();
+    int y = sprite->GetSprite_y();
+    if (((x + vx + sprite->GetSprite_w()) > w) ||
+        ((x + vx) < 0)) vx *= -1;
+
+    if (((y+ vy + sprite->GetSprite_h()) > h) ||
+        ((y+ vy) < 0)) vy *= -1;
+
+    x = x + vx;
+    y = y + vy;
+    sprite->Update(x + vx, y + vy);
+    return 0;
+}
+
