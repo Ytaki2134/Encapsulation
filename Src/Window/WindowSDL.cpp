@@ -160,8 +160,10 @@ int WindowSDL::Update()
 void WindowSDL::DrawFps()
 {
 	int end = SDL_GetTicks() - Loop;
-	if (end <desireDelta)
+	if (end < desireDelta) {
 		SDL_Delay(desireDelta-end);
+		end = SDL_GetTicks() - Loop;
+	}
 
 
 	TTF_Init();
@@ -175,7 +177,7 @@ void WindowSDL::DrawFps()
 		postextfps.y = 100;
 		SDL_Color noir = { 0, 0, 0 }; 
 
-		std::string txt = std::to_string(fps );
+		std::string txt = std::to_string( fps*((end/desireDelta)) );
 		txt = "FPS: " + txt ;
 		
 		SDL_Surface* text;
