@@ -37,6 +37,12 @@
     <Filter Include="Fichiers sources\GameMode">
       <UniqueIdentifier>{1a2cf6eb-ab93-4a30-bf8a-ad074e42dd45}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Physics">
+      <UniqueIdentifier>{c00acaec-7d70-449a-8726-0ac7702b7bbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Physics">
+      <UniqueIdentifier>{f7589ce5-7bdd-4412-9385-593aebfeffbc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Encapsulation.cpp">
@@ -69,11 +75,11 @@
     <ClCompile Include="Src\GameMode\GameMode.cpp">
       <Filter>Fichiers sources\GameMode</Filter>
     </ClCompile>
-    <ClCompile Include="QuadTree.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="Src\Physics\CirclePhysics.cpp">
+      <Filter>Fichiers d%27en-tête\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="BallCollider.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="Src\Physics\QuadTree.cpp">
+      <Filter>Fichiers d%27en-tête\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,23 +89,8 @@
     <ClInclude Include="Src\GameMode\GameMode.h">
       <Filter>Fichiers d%27en-tête\GameMode</Filter>
     </ClInclude>
-    <ClInclude Include="GameMode.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GameModeRaylib.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Core\App.h">
       <Filter>Fichiers d%27en-tête\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Sprite\Sprite.h">
-      <Filter>Fichiers d%27en-tête\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Sprite\SpriteRayLib.h">
-      <Filter>Fichiers d%27en-tête\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Sprite\SpriteSDL.h">
-      <Filter>Fichiers d%27en-tête\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="Src\Window\Window.h">
       <Filter>Fichiers d%27en-tête\Window</Filter>
@@ -110,11 +101,20 @@
     <ClInclude Include="Src\Window\WindowSDL.h">
       <Filter>Fichiers d%27en-tête\Window</Filter>
     </ClInclude>
-    <ClInclude Include="QuadTree.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Src\Sprite\Sprite.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="BallCollider.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Src\Sprite\SpriteRayLib.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite\SpriteSDL.h">
+      <Filter>Fichiers d%27en-tête\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Physics\CirclePhysics.h">
+      <Filter>Fichiers sources\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Physics\QuadTree.h">
+      <Filter>Fichiers sources\Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

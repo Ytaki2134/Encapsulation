@@ -129,7 +129,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>raylib-5.0_win64_msvc16\lib;SDL2-2.24.2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;raylib.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;raylib.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -151,12 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BallCollider.cpp" />
     <ClCompile Include="Encapsulation.cpp" />
-    <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Src\Core\App.cpp" />
     <ClCompile Include="Src\GameMode\BouncingBallsGM.cpp" />
     <ClCompile Include="Src\GameMode\GameMode.cpp" />
+    <ClCompile Include="Src\Physics\CirclePhysics.cpp" />
+    <ClCompile Include="Src\Physics\QuadTree.cpp" />
     <ClCompile Include="Src\Sprite\Sprite.cpp" />
     <ClCompile Include="Src\Sprite\SpriteRayLib.cpp" />
     <ClCompile Include="Src\Sprite\SpriteSDL.cpp" />
@@ -169,11 +169,14 @@
     <Image Include="Src\Ressources\masterBall.png" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BallCollider.h" />
-    <ClInclude Include="QuadTree.h" />
     <ClInclude Include="Src\Core\App.h" />
     <ClInclude Include="Src\GameMode\BouncingBallsGM.h" />
     <ClInclude Include="Src\GameMode\GameMode.h" />
+    <ClInclude Include="Src\Physics\CirclePhysics.h" />
+    <ClInclude Include="Src\Physics\QuadTree.h" />
+    <ClInclude Include="Src\Sprite\Sprite.h" />
+    <ClInclude Include="Src\Sprite\SpriteRayLib.h" />
+    <ClInclude Include="Src\Sprite\SpriteSDL.h" />
     <ClInclude Include="Src\Window\Window.h" />
     <ClInclude Include="Src\Window\WindowRayLib.h" />
     <ClInclude Include="Src\Window\WindowSDL.h" />

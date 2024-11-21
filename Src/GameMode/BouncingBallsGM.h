@@ -5,7 +5,7 @@ class BouncingBallsGM : public GameMode
 {
 public:
 	BouncingBallsGM();
-	void Init(Window* window) override;
+	void Init(CirclePhysics* circlePhysics) override;
 	void Update() override;
 	void CheckWin() override;
 };

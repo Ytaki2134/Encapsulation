@@ -3,6 +3,9 @@
 #include "Window.h"
 #include "../GameMode/BouncingBallsGM.h"
 #include<raylib.h>
+
+class CirclePhysics;
+
 class WindowRayLib : public Window
 {
 public:
@@ -13,7 +16,7 @@ public:
 	int Clear() override;
 	int Draw() override;
 	int Update() override;
-	int MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos) override;
+	//int MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos) override;
 
 
 private:

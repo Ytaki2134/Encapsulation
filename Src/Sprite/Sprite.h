@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <SDL.h>
+#include <SDL_image.h>
 #include <raylib.h>
 
 struct Position
@@ -14,6 +15,7 @@ struct Position
 class SpriteSDL;
 class SpriteRayLib;
 class Window;
+struct Circle;
 
 class Sprite
 {
@@ -27,5 +29,6 @@ public:
 protected:
 	std::string m_path;
 	int velos_x, velos_y = 0;
+	Circle* m_circleCollider;
 };
 

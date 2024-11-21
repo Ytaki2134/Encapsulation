@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <SDL.h>
-#include "Src/Window/WindowSDL.h"
+#include "../Window/WindowSDL.h"
 
 struct QTPoint {
 	QTPoint(int posX, int posY) { x = posX; y = posY; }

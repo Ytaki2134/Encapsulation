@@ -6,7 +6,7 @@
 
 #include "Src/Window/Window.h"
 #include "Src/Sprite/Sprite.h"
-#include "QuadTree.h"
+#include "Src/Physics/QuadTree.h"
 
 int random_int(int min, int max)
 {
@@ -16,7 +16,7 @@ int random_int(int min, int max)
 int main(int argc, char** args)
 {
 	//Change Desired Library Here
-	Library currentLibrary = RAYLIB;
+	Library currentLibrary = SDL;
 	GameModeType currentGamemode = BOUNCING_BALLS;
 
 	Window* win = Window::MakeWindow("Encapsulation", 400, 400, currentLibrary);

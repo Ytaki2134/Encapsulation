@@ -4,6 +4,8 @@
 #include "Window.h"
 #include "../Core/App.h"
 
+class CirclePhysics;
+
 class WindowSDL : public Window
 {
 public:
@@ -14,7 +16,7 @@ public:
 	int Clear() override;
 	int Draw() override;
 	int Update() override;
-	int MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos) override;
+	//int MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos) override;
 
 	SDL_Window* GetSDLWindow();
 	SDL_Renderer* GetSDLRenderer();

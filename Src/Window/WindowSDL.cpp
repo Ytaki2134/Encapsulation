@@ -1,4 +1,5 @@
 ﻿#include "WindowSDL.h"
+#include "../../Src/Physics/CirclePhysics.h"
 
 WindowSDL::WindowSDL(std::string winName, int SizeX, int SizeY)
 {
@@ -30,10 +31,26 @@ int WindowSDL::Init(GameModeType* gameModeType)
 		return 1;
 	}
 
+	m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED);
+
+	if (!m_renderer)
+	{
+		std::cout << "Error getting renderer: " << SDL_GetError() << std::endl;
+		system("pause");
+		// End the program
+		return 1;
+	}
+
+	m_circlePhysics = new CirclePhysics();
+	m_circlePhysics->SetWindow(m_window);
 	m_gamemode = GameMode::MakeGameMode(*gameModeType);
 	if (m_gamemode != nullptr)
 	{
-		m_gamemode->Init(this);
+		m_gamemode->Init(m_circlePhysics);
+		for (Circle& circle : *m_circlePhysics->GetCirleList())
+		{
+			m_circlePhysics->MakeSpriteSDL(&circle);
+		}
 		return 0;
 	}
 	else
@@ -55,16 +72,6 @@ int WindowSDL::Open()
 	// Make sure getting the surface succeeded
 	if (!m_winSurface) {
 		std::cout << "Error getting surface: " << SDL_GetError() << std::endl;
-		system("pause");
-		// End the program
-		return 1;
-	}
-
-	m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED);
-
-	if (!m_renderer)
-	{
-		std::cout << "Error getting renderer: " << SDL_GetError() << std::endl;
 		system("pause");
 		// End the program
 		return 1;
@@ -98,16 +105,19 @@ int WindowSDL::Clear()
 int WindowSDL::Draw()
 {
 	// Fill the window with a white rectangle
-	SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
+	//SDL_FillRect(m_winSurface, NULL, SDL_MapRGB(m_winSurface->format, 255, 255, 255));
+	SDL_SetRenderDrawColor(m_renderer, 255, 255, 255, 255);
+	SDL_RenderClear(m_renderer);
 
 	//DRAW HERE
-	for (auto& sprite : m_gamemode->GetSpriteVector())
+	for (Circle& circle : *m_circlePhysics->GetCirleList())
 	{
-		sprite->LoadSprite();
+		circle.sprite->LoadSprite();
 	}
 
 	// Update the window display
-	SDL_UpdateWindowSurface(m_window);
+	//SDL_UpdateWindowSurface(m_window);
+	SDL_RenderPresent(m_renderer);
 
 	return 0;
 }
@@ -118,21 +128,21 @@ int WindowSDL::Update()
 	return 0;
 }
 
-int WindowSDL::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
-{
-	m_gamemode->AddSprite(Sprite::MakeSpriteSDL("Src/Ressources/masterBall.bmp", SizeX, SizeY, pos, m_window));
-	if (m_gamemode != nullptr)
-	{
-		return 0;
-	}
-	else
-	{
-		std::cout << "Error creating sprite in scene: " << SDL_GetError() << std::endl;
-		system("pause");
-		// End the program
-		return 1;
-	}
-}
+//int WindowSDL::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
+//{
+//	m_gamemode->AddSprite(Sprite::MakeSpriteSDL("Src/Ressources/masterBall.bmp", SizeX, SizeY, pos, m_window));
+//	if (m_gamemode != nullptr)
+//	{
+//		return 0;
+//	}
+//	else
+//	{
+//		std::cout << "Error creating sprite in scene: " << SDL_GetError() << std::endl;
+//		system("pause");
+//		// End the program
+//		return 1;
+//	}
+//}
 
 SDL_Window* WindowSDL::GetSDLWindow()
 {
