@@ -34,6 +34,7 @@ bool QuadTree::Insert(QTPoint point)
 		else if (m_SouthWest->Insert(point))
 			return true;
 	}
+	return false;
 }
 
 void QuadTree::Show(WindowSDL* window)

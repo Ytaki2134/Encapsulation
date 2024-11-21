@@ -1,4 +1,5 @@
 #include "WindowRayLib.h"
+#include "../../Src/Physics/CirclePhysics.h"
 
 WindowRayLib::WindowRayLib(std::string winName, int SizeX, int SizeY,int newfps)
 {
@@ -10,9 +11,17 @@ WindowRayLib::WindowRayLib(std::string winName, int SizeX, int SizeY,int newfps)
 
 int WindowRayLib::Init(GameModeType* gameModeType)
 {
+	m_circlePhysics = new CirclePhysics();
 	m_gamemode = GameMode::MakeGameMode(*gameModeType);
 	if (m_gamemode != nullptr)
+	{
+		m_gamemode->Init(m_circlePhysics);
+		for (Circle& circle : *m_circlePhysics->GetCirleList())
+		{
+			m_circlePhysics->MakeSpriteRayLib(&circle);
+		}
 		return 0;
+	}
 	else
 		return 1;
 }
@@ -24,7 +33,6 @@ int WindowRayLib::Open()
 	BeginDrawing();
 	ClearBackground(WHITE);
 	EndDrawing();
-	m_gamemode->Init(this);
 	return 0;
 }
 
@@ -48,9 +56,9 @@ int WindowRayLib::Draw()
 	ClearBackground(WHITE);
 	DrawFPS(10, 10);
 
-	for (auto& sprite : m_gamemode->GetSpriteVector())
+	for (Circle& circle : *m_circlePhysics->GetCirleList())
 	{
-		sprite->LoadSprite();
+		circle.sprite->LoadSprite();
 	}
 	EndDrawing();
 	return 0;
@@ -64,22 +72,22 @@ int WindowRayLib::Update()
 		sprite->Update();
 	}
 	
-	m_gamemode->Update();
+	//m_gamemode->Update();
 	return 0;
 }
 
-int WindowRayLib::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
-{
-	if (Sprite::MakeSpriteRayLib("Src/Ressources/masterBall.png", SizeX, SizeY, pos) != nullptr)
-	{
-		m_gamemode->AddSprite(Sprite::MakeSpriteRayLib("Src/Ressources/masterBall.png", SizeX, SizeY, pos));
-		return 0;
-	}
-	else
-	{
-		std::cout << "Error creating sprite in scene: " << SDL_GetError() << std::endl;
-		system("pause");
-		// End the program
-		return 1;
-	}
-}
+//int WindowRayLib::MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos)
+//{
+//	if (Sprite::MakeSpriteRayLib("Src/Ressources/masterBall.png", SizeX, SizeY, pos) != nullptr)
+//	{
+//		m_circlePhysics->AddSprite(Sprite::MakeSpriteRayLib("Src/Ressources/masterBall.png", SizeX, SizeY, pos));
+//		return 0;
+//	}
+//	else
+//	{
+//		std::cout << "Error creating sprite in scene: " << SDL_GetError() << std::endl;
+//		system("pause");
+//		// End the program
+//		return 1;
+//	}
+//}

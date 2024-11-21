@@ -1,4 +1,5 @@
 #pragma once
+#include <SDL.h>
 #include "Sprite.h"
 
 class WindowSDL;
@@ -12,8 +13,8 @@ public:
 	int Update() override;
 public:
 	SDL_Rect m_rect;
-	SDL_Surface* m_surface = nullptr;
-	SDL_Surface* m_SDLwinSurface = nullptr;
+	SDL_Texture* m_texture = nullptr;
+	SDL_Renderer* m_renderer = nullptr;
 private:
 	//Circle m_collider;
 };

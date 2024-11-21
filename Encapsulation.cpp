@@ -6,7 +6,7 @@
 
 #include "Src/Window/Window.h"
 #include "Src/Sprite/Sprite.h"
-#include "QuadTree.h"
+#include "Src/Physics/QuadTree.h"
 
 int random_int(int min, int max)
 {

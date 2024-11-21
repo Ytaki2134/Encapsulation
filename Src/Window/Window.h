@@ -21,11 +21,12 @@ public:
 	virtual int Clear() = 0;
 	virtual int Draw() = 0;
 	virtual int Update() = 0;
-	virtual int MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos) = 0;
+	//virtual int MakeSprite(std::string imgPath, int SizeX, int SizeY, Position pos) = 0;
 protected:
 	std::string m_winName;
 	int m_sizeX, m_sizeY;
 	GameMode* m_gamemode = nullptr;
+	CirclePhysics* m_circlePhysics = nullptr;
 private:
 	static Window* MakeSDLWindow(std::string winName, int SizeX, int SizeY, int fps);
 	static Window* MakeRayLibWindow(std::string winName, int SizeX, int SizeY, int fps);
