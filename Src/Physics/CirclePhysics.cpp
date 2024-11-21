@@ -27,10 +27,9 @@ bool CirclePhysics::Update()
     return false;
 }
 
-int CirclePhysics::MakeCircle(std::string imgPath, float x, float y, float r)
+Circle* CirclePhysics::MakeCircle(std::string imgPath, float x, float y, float r)
 {
-    AddCircle(imgPath, x, y, r);
-    return 0;
+    return AddCircle(imgPath, x, y, r);
 }
 
 void CirclePhysics::MakeSpriteSDL(Circle* targetCircle)
@@ -43,9 +42,16 @@ void CirclePhysics::MakeSpriteRayLib(Circle* targetCircle)
     targetCircle->sprite = Sprite::MakeSpriteRayLib(targetCircle->imgPath, (int)targetCircle->r, (int)targetCircle->r, { (int)targetCircle->x, (int)targetCircle->y });
 }
 
-Sprite* CirclePhysics::SyncSpritePos()
+void CirclePhysics::SetVelocityRandom(Circle* targetCircle)
 {
-    return nullptr;
+    int minVelocity = -1;
+    int maxVelocity = 1;
+
+    int randomNum = rand() % (maxVelocity - (minVelocity) + 1) + minVelocity;
+    int randomNum2 = rand() % (maxVelocity - (minVelocity) + 1) + minVelocity;
+
+    targetCircle->vx = randomNum;
+    targetCircle->vy = randomNum;
 }
 
 std::vector<Circle>* CirclePhysics::GetCirleList()
@@ -63,7 +69,7 @@ void CirclePhysics::SetWindow(SDL_Window* window)
 //    return nullptr;
 //}
 
-void CirclePhysics::AddCircle(std::string imgPath, float x, float y, float r)
+Circle* CirclePhysics::AddCircle(std::string imgPath, float x, float y, float r)
 {
     Circle tempCircle;
     tempCircle.x = x; tempCircle.y = y;
@@ -74,4 +80,5 @@ void CirclePhysics::AddCircle(std::string imgPath, float x, float y, float r)
 
     tempCircle.id = m_circleList.size();
     m_circleList.emplace_back(tempCircle);
+    return &tempCircle;
 }

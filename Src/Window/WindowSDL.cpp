@@ -13,7 +13,6 @@ int WindowSDL::Init(GameModeType* gameModeType)
 {
 	m_app = App();
 
-
 	//initialize desireDelta
 	desireDelta = 1000 / fps;
 	// Initialize SDL. SDL_Init will return -1 if it fails.
@@ -69,7 +68,6 @@ int WindowSDL::Init(GameModeType* gameModeType)
 
 int WindowSDL::Open()
 {
-
 	// Get the surface from the window
 	m_winSurface = SDL_GetWindowSurface(m_window);
 
@@ -133,6 +131,7 @@ int WindowSDL::Draw()
 
 int WindowSDL::Update()
 {
+	//m_gamemode->Update();
 	m_app.EventLoop();
 	for (auto& circle : *m_circlePhysics->GetCirleList())
 	{
