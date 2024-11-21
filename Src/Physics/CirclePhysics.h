@@ -25,15 +25,15 @@ public:
 	CirclePhysics();
 	bool Init();
 	bool Update();
-	int MakeCircle(std::string imgPath, float x, float y, float r);
+	Circle* MakeCircle(std::string imgPath, float x, float y, float r);
 	void MakeSpriteSDL(Circle* targetCircle);
 	void MakeSpriteRayLib(Circle* targetCircle);
-	Sprite* SyncSpritePos();
+	void SetVelocityRandom(Circle* targetCircle);
 
 	std::vector<Circle>* GetCirleList();
 	void SetWindow(SDL_Window* window);
 private:
-	void AddCircle(std::string imgPath, float x, float y, float r = 5.0f);
+	Circle* AddCircle(std::string imgPath, float x, float y, float r = 5.0f);
 private:
 	std::vector<std::pair<float, float>> m_modelCircle;
 	std::vector<Circle> m_circleList;

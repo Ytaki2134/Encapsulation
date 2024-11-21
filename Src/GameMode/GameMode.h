@@ -16,12 +16,8 @@ public:
 	virtual void Update() = 0;
 	virtual void CheckWin() = 0;
 
-	virtual void MakeCircleObject(float x, float y, float r, std::string imgPath);
-	//virtual void AddSprite(Sprite* sprite);
-	//virtual std::vector<Sprite*> GetSpriteVector();
+	virtual Circle* MakeCircleObject(float x, float y, float r, std::string imgPath);
 	static GameMode* MakeGameMode(GameModeType gameMode);
 protected:
 	CirclePhysics* m_circlePhysics;
-	//std::vector<Sprite*> m_sprites;
-	//Window* m_window = nullptr;
 };

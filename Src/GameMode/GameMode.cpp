@@ -3,9 +3,9 @@
 #include "../../Src/Physics/CirclePhysics.h"
 
 
-void GameMode::MakeCircleObject(float x, float y, float r, std::string imgPath)
+Circle* GameMode::MakeCircleObject(float x, float y, float r, std::string imgPath)
 {
-	m_circlePhysics->MakeCircle(imgPath, x, y, r);
+	return m_circlePhysics->MakeCircle(imgPath, x, y, r);
 }
 
 GameMode* GameMode::MakeGameMode(GameModeType gameMode)
@@ -20,13 +20,3 @@ GameMode* GameMode::MakeGameMode(GameModeType gameMode)
 		break;
 	}
 }
-
-//void GameMode::AddSprite(Sprite* sprite)
-//{
-//	m_sprites.push_back(sprite);
-//}
-//
-//std::vector<Sprite*> GameMode::GetSpriteVector()
-//{
-//	return m_sprites;
-//}
